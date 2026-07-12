@@ -1,0 +1,40 @@
+{
+  "exact_duplicate_records_combined_keep_false": 11,
+  "exact_duplicate_rate_combined": 0.00014034729576278756,
+  "naive_test_records_with_exact_duplicate_in_train": 6,
+  "naive_test_exact_duplicate_in_train_rate": 0.00025516713447307985,
+  "within_run_duplicate_rate_by_run": {
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0016933207902163688,
+    "9": 0.0,
+    "10": 0.0,
+    "11": 0.0,
+    "12": 0.0,
+    "13": 0.0,
+    "14": 0.0,
+    "15": 0.0
+  },
+  "cross_run_duplicate_rate": 2.5517690138688645e-05,
+  "nearest_neighbor_naive": {
+    "sample_train": 10000,
+    "sample_test": 2500,
+    "mean_distance": 1.144957922369787,
+    "median_distance": 0.29166354537277694,
+    "p05_distance": 0.01247812488959801,
+    "p95_distance": 4.904665248566733
+  },
+  "nearest_neighbor_groupkfold_mean_across_folds": {
+    "sample_train": 10000.0,
+    "sample_test": 250.0,
+    "mean_distance": 1.6946357465172333,
+    "median_distance": 0.3701354316267394,
+    "p05_distance": 0.11136280274569889,
+    "p95_distance": 5.6186292109959535
+  }
+}

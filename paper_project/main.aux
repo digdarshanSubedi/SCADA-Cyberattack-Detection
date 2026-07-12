@@ -1,0 +1,62 @@
+\relax 
+\citation{beaver2013power,pan2015classification}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{}\protected@file@percent }
+\citation{beaver2013power,pan2015classification}
+\citation{tan2017survey,wang2019deep}
+\citation{lundberg2017shap}
+\citation{beaver2013power,pan2015classification}
+\citation{chen2016xgboost}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Related Work}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Evaluating the MSU/ORNL Benchmark}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Machine Learning for Power-System Intrusion Detection}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-C}}From Detection Accuracy to Automation Readiness}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {III}Methodology}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Dataset and Classification Task}{2}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Binary label mapping from the official dataset documentation. The public binary CSV files used in this study expose the label as Attack/Natural rather than preserving the numeric scenario marker.}}{2}{}\protected@file@percent }
+\newlabel{tab:labels}{{I}{2}{}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Input Features}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Detectors}{2}{}\protected@file@percent }
+\citation{lundberg2017shap}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Physical meaning of the PMU feature groups. Each signal appears for relays R1--R4.}}{3}{}\protected@file@percent }
+\newlabel{tab:features}{{II}{3}{}{table.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-D}}Evaluation Protocols}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-E}}Interpreting Model Decisions}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Results}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Conventional Evaluation Suggests Strong Detection}{3}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Detection performance under the conventional random split. These values show how the models perform when records from the same run may appear in both training and test data.}}{3}{}\protected@file@percent }
+\newlabel{tab:naive}{{III}{3}{}{table.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Run-Level Holdout Tests Transfer to Unseen Collections}{3}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Detection performance under leakage-controlled evaluation, reported as mean $\pm $ standard deviation across fifteen held-out runs.}}{3}{}\protected@file@percent }
+\newlabel{tab:groupkfold}{{IV}{3}{}{table.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Comparison of the conventional random split and the leakage-controlled run-level protocol for all three detectors. The paired bars show whether performance measured on mixed-run test data is retained when the model is evaluated on a complete unseen run. The difference between the two bars is the paper's central measurement because it separates apparent benchmark performance from run-level transfer.}}{3}{}\protected@file@percent }
+\newlabel{fig:naive_vs_leakage}{{1}{3}{}{figure.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Pooled ROC curves under run-level holdout. Each curve concatenates out-of-fold predictions from runs that were absent during training. XGBoost has the strongest controlled discrimination, while the CNN's curve shows why its high F1 must be interpreted cautiously.}}{4}{}\protected@file@percent }
+\newlabel{fig:roc_leakage}{{2}{4}{}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}The Evaluation Gap Quantifies Benchmark Optimism}{4}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces F1 under each protocol and the resulting evaluation gap. A positive gap indicates that the conventional random split reports higher performance than the run-level protocol.}}{4}{}\protected@file@percent }
+\newlabel{tab:delta}{{V}{4}{}{table.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Per-fold F1 across the fifteen held-out runs. Each value corresponds to a model tested on one complete run that was absent from training. Wide dispersion indicates that detection difficulty varies across collections and that a single random split may conceal this variation.}}{4}{}\protected@file@percent }
+\newlabel{fig:fold_variance}{{3}{4}{}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Pooled run-level confusion matrix for the best controlled-F1 model. The large number of false positives explains why F1 alone overstates the CNN's usefulness for operational review.}}{4}{}\protected@file@percent }
+\newlabel{fig:confusion}{{4}{4}{}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Physically Meaningful Signals Support Operator Review}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Top features identified through held-out permutation importance and tree-model SHAP analysis. Features are labeled using their physical PMU or relay meaning rather than anonymous column indices. Agreement around voltage, current, and impedance quantities suggests that the tree models rely on interpretable grid measurements, although attribution does not establish causality.}}{5}{}\protected@file@percent }
+\newlabel{fig:importance}{{5}{5}{}{figure.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Discussion}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Automation Readiness Depends on the Score That Survives Holdout}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}The Gap Is Not Explained by a Large Loss of Training Data}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Interpretability Helps Review, but Does Not Replace Validation}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}The Contribution Is an Evaluation Standard, Not a New Architecture}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Limitations and Future Work}{5}{}\protected@file@percent }
+\newlabel{sec:limitations}{{VI}{5}{}{section.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusion}{5}{}\protected@file@percent }
+\bibstyle{IEEEtran}
+\bibdata{references}
+\bibcite{beaver2013power}{1}
+\bibcite{pan2015classification}{2}
+\bibcite{tan2017survey}{3}
+\bibcite{wang2019deep}{4}
+\bibcite{lundberg2017shap}{5}
+\bibcite{chen2016xgboost}{6}
+\@writefile{toc}{\contentsline {section}{References}{6}{}\protected@file@percent }
+\gdef \@abspage@last{6}
