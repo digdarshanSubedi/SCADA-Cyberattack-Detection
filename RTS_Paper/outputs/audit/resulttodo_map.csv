@@ -1,0 +1,16 @@
+placeholder,experiment,p_tier,status
+N/A,N/A,N/A,"BLOCKED: no ieee_rtc_*.tex draft file found in repository. Cannot extract \resulttodo{} placeholders. The two candidate filenames referenced in the planning docs (ieee_rtc_scada_low_latency_draft.tex, ieee_rtc_telemetry_budgets_draft.tex) do not exist under any path. Provide the actual draft file to populate this map with real placeholder IDs, locations, and captions."
+(inferred) baseline LORO for LR/RF/XGB/MLP,clean run-aware leave-one-run-out for 4 models,P0,"RF/XGB/CNN partially reusable from outputs/per_fold_metrics.csv; LR and MLP not implemented -- must run"
+(inferred) batch-1 latency P50/P95/P99/throughput/memory/model size,latency benchmarking harness,P0,not implemented -- must run
+(inferred) missingness 5/10/20/30 pct,test-time missingness degradation,P0,not implemented -- must run
+(inferred) feature-group unavailability,test-time group masking,P0,not implemented -- must run
+(inferred) relay loss R1-R4,test-time relay masking,P0,not implemented -- must run
+(inferred) threshold stability 5 rules,recompute thresholds over saved probabilities,P0,derivable from saved predictions once per-fold arrays confirmed complete
+(inferred) SHAP overhead RF+XGB,SHAP timing vs envelope,P0,not implemented; shap package not installed -- must run after environment setup
+(inferred) feature budgets 128/64/32/16/PMU-only/cyber-log-only,feature-subset LORO reruns,P1,not implemented -- must run
+(inferred) edge-visible feature mapping + placement table,feature_source_map.csv + placement comparison,P0,partially complete this audit -- definition needs author confirmation
+(inferred) payload model bytes/record,payload computation,P0,not implemented -- must run (cheap, arithmetic only)
+(inferred) envelope verdicts vs E1/E2/E3,verdict table,P0,not implemented -- depends on latency harness
+(inferred) Wilcoxon + effect sizes + Holm correction,statistical testing,P1,not implemented -- must run
+(inferred) headline fig_tradespace,payload vs latency vs AUC scatter,P0,not implemented -- must run after Phases B/C
+(inferred) quantization/noise variants,P2,P2,not implemented -- only if time remains

@@ -1,0 +1,48 @@
+{
+  "generated": "audit phase A",
+  "top_level": {
+    "src": {
+      "file_count": 22,
+      "total_bytes": 158513
+    },
+    "outputs": {
+      "file_count": 28,
+      "total_bytes": 30086358
+    },
+    "figures": {
+      "file_count": 13,
+      "total_bytes": 700162
+    },
+    "paper_project": {
+      "file_count": 15,
+      "total_bytes": 1003197
+    },
+    "binaryAllNaturalPlusNormalVsAttacks - 2 Class": {
+      "file_count": 16,
+      "total_bytes": 81907088
+    },
+    "Author Kit Official": {
+      "file_count": 7,
+      "total_bytes": 516749
+    },
+    "RTS_Paper": {
+      "file_count": 1,
+      "total_bytes": 4212
+    }
+  },
+  "python_env": {
+    "numpy": "2.0.2",
+    "pandas": "2.2.3",
+    "sklearn": "1.6.1",
+    "xgboost": "NOT INSTALLED",
+    "shap": "NOT INSTALLED",
+    "torch": "NOT INSTALLED",
+    "matplotlib": "3.9.4",
+    "seaborn": "0.13.2",
+    "scipy": "1.13.1"
+  },
+  "git": {
+    "branch": "rts-paper-extension",
+    "last_commit": "2d591e7 Initial commit: SCADA leakage-aware evaluation paper, pipeline, and figures"
+  }
+}
