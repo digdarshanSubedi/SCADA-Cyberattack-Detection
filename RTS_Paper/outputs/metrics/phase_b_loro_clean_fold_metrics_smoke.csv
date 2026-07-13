@@ -1,0 +1,3 @@
+precision,recall,f1,fpr,balanced_accuracy,n_test,n_attack,n_normal,roc_auc,pr_auc,fold_id,held_out_run,model,condition,feature_budget,placement,threshold_rule,seed,train_time_sec,model_path
+0.7141525265709491,0.9767916347870441,0.8250753985351141,0.9302184466019418,0.5232865940925512,5569,3921,1648,0.6951316102242592,0.8574666591481235,1,10,Logistic Regression,clean,128,central,fixed_0.5,42,4.555119709,RTS_Paper/outputs/models/logistic_regression_fold01.joblib
+0.7112890922959573,0.9787457360272894,0.8238542241855329,0.9438902743142145,0.5174277308565375,5415,3811,1604,0.6973161755804663,0.8600614373990232,2,3,Logistic Regression,clean,128,central,fixed_0.5,42,5.075704875,RTS_Paper/outputs/models/logistic_regression_fold02.joblib

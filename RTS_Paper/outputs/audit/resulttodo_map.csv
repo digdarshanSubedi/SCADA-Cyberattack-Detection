@@ -1,16 +1,44 @@
-placeholder,experiment,p_tier,status
-N/A,N/A,N/A,"BLOCKED: no ieee_rtc_*.tex draft file found in repository. Cannot extract \resulttodo{} placeholders. The two candidate filenames referenced in the planning docs (ieee_rtc_scada_low_latency_draft.tex, ieee_rtc_telemetry_budgets_draft.tex) do not exist under any path. Provide the actual draft file to populate this map with real placeholder IDs, locations, and captions."
-(inferred) baseline LORO for LR/RF/XGB/MLP,clean run-aware leave-one-run-out for 4 models,P0,"RF/XGB/CNN partially reusable from outputs/per_fold_metrics.csv; LR and MLP not implemented -- must run"
-(inferred) batch-1 latency P50/P95/P99/throughput/memory/model size,latency benchmarking harness,P0,not implemented -- must run
-(inferred) missingness 5/10/20/30 pct,test-time missingness degradation,P0,not implemented -- must run
-(inferred) feature-group unavailability,test-time group masking,P0,not implemented -- must run
-(inferred) relay loss R1-R4,test-time relay masking,P0,not implemented -- must run
-(inferred) threshold stability 5 rules,recompute thresholds over saved probabilities,P0,derivable from saved predictions once per-fold arrays confirmed complete
-(inferred) SHAP overhead RF+XGB,SHAP timing vs envelope,P0,not implemented; shap package not installed -- must run after environment setup
-(inferred) feature budgets 128/64/32/16/PMU-only/cyber-log-only,feature-subset LORO reruns,P1,not implemented -- must run
-(inferred) edge-visible feature mapping + placement table,feature_source_map.csv + placement comparison,P0,partially complete this audit -- definition needs author confirmation
-(inferred) payload model bytes/record,payload computation,P0,not implemented -- must run (cheap, arithmetic only)
-(inferred) envelope verdicts vs E1/E2/E3,verdict table,P0,not implemented -- depends on latency harness
-(inferred) Wilcoxon + effect sizes + Holm correction,statistical testing,P1,not implemented -- must run
-(inferred) headline fig_tradespace,payload vs latency vs AUC scatter,P0,not implemented -- must run after Phases B/C
-(inferred) quantization/noise variants,P2,P2,not implemented -- only if time remains
+line,raw,nearby_context,p_tier,status
+156,"The four relay/PMU units (R1--R4) each contribute voltage magnitude and angle, current magnitude and angle, sequence components, frequency and frequency change,",\subsection{Feature Groups and Placement Visibility},P0,not yet run
+185,"Per-record payload is modeled as $P = n_f \times b$ bytes, where $n_f$ is the transmitted feature count and $b$ the bytes per numeric field (4 for 32-bit float;",\subsection{Payload Model},P0,not yet run
+210,"Latency is measured at batch size one with \texttt{time.perf\_counter\_ns()}, 500 warm-up and 5{,}000 timed iterations per model, fixed thread counts, identical",\subsection{Latency and Resource Measurement},P0,not yet run
+250,Run-aware & Logistic Regression & \resulttodo{precision} & \resulttodo{recall} & \resulttodo{F1} & \resulttodo{FPR} & \resulttodo{AUC} \\,Run-aware & Feature-space CNN & $0.711\pm0.043$ & $0.998\pm0.006$ & $0.829\pm0.0,P0 (table row),not yet run
+251,Run-aware & Compact MLP & \resulttodo{precision} & \resulttodo{recall} & \resulttodo{F1} & \resulttodo{FPR} & \resulttodo{AUC} \\,Run-aware & Logistic Regression & \resulttodo{precision} & \resulttodo{recall} &,P0 (table row),not yet run
+267,Logistic Regression & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,\midrule,P0 (table row),not yet run
+268,Random Forest & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,Logistic Regression & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttod,P0 (table row),not yet run
+269,XGBoost & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,Random Forest & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & ,P0 (table row),not yet run
+270,Compact MLP & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,XGBoost & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resul,P0 (table row),not yet run
+271,Feature-space CNN & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,Compact MLP & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \r,P0 (table row),not yet run
+276,"\resulttodo{State which models satisfy E1/E2/E3 at P95, and the accuracy ranking among those that do.}",\end{table},P0,not yet run
+291,128 & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,\midrule,P0,not yet run
+292,64 & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,128 & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,P0,not yet run
+293,32 & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,64 & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,P0,not yet run
+294,16 & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,32 & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,P0,not yet run
+295,PMU only & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,16 & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,P0 (table row),not yet run
+296,Cyber/log only & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,PMU only & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,P0 (table row),not yet run
+301,"\resulttodo{Identify the smallest budget preserving discrimination within a stated tolerance of the full set, and its payload reduction factor.}",\end{table},P1,not yet run
+314,Logistic Regression & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,\midrule,P0 (table row),not yet run
+315,Random Forest & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,Logistic Regression & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttod,P0 (table row),not yet run
+316,XGBoost & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,Random Forest & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & ,P0 (table row),not yet run
+317,Compact MLP & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,XGBoost & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resul,P0 (table row),not yet run
+318,Feature-space CNN & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,Compact MLP & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} & \r,P0 (table row),not yet run
+325,"\resulttodo{Identify the most damaging degradation class, the most single-point-sensitive relay, and the most gracefully degrading model.}",\figuretodo{fig:missingness}{Run-aware performance as missing telemetry increase,P0,not yet run
+338,Edge (edge-visible features) & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,\midrule,P0,not yet run
+339,"Central, clean aggregation & \resulttodo{} & \resulttodo{} & \resulttodo{} \\",Edge (edge-visible features) & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,P0 (table row),not yet run
+340,"Central, 10\% missing & \resulttodo{} & \resulttodo{} & \resulttodo{} \\","Central, clean aggregation & \resulttodo{} & \resulttodo{} & \resulttodo{} \\",P0 (table row),not yet run
+341,"Central, logs delayed & \resulttodo{} & \resulttodo{} & \resulttodo{} \\","Central, 10\% missing & \resulttodo{} & \resulttodo{} & \resulttodo{} \\",P0 (table row),not yet run
+342,"Central, one relay lost & \resulttodo{} & \resulttodo{} & \resulttodo{} \\","Central, logs delayed & \resulttodo{} & \resulttodo{} & \resulttodo{} \\",P0 (table row),not yet run
+347,"\resulttodo{State whether full central visibility survives realistic aggregation impairment better than structurally limited edge visibility, and under which im",\end{table},P0,not yet run
+360,Fixed 0.5 & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,\midrule,P0 (table row),not yet run
+361,Max F1 & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,Fixed 0.5 & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,P0 (table row),not yet run
+362,Max Youden $J$ & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,Max F1 & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,P0 (table row),not yet run
+363,Constrained FPR & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,Max Youden $J$ & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,P0 (table row),not yet run
+377,Random Forest & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,\midrule,P0 (table row),not yet run
+378,XGBoost & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,Random Forest & \resulttodo{} & \resulttodo{} & \resulttodo{} & \resulttodo{} \\,P0 (table row),not yet run
+383,"\resulttodo{State threshold variability across runs, resulting alert-load ranges, and whether per-alert SHAP fits the operational envelope or requires selective",\end{table},P0,not yet run
+389,Reporting milliseconds and AUC in isolation invites arbitrary interpretation. Referencing standardized transfer-time classes and reporting intervals converts th,\subsection{Budgets Convert Benchmarks into Engineering Verdicts},P0,not yet run
+401,"At the edge, the availability budget binds structurally; centrally, it binds stochastically through aggregation impairment while the latency budget absorbs coll",\subsection{Placement Determines Which Budget Binds},P0,not yet run
+472,"\resulttodo{AUTHORS: add one survey on digital-substation communication engineering / latency verification (e.g., a 61850 process-bus performance study).}",\bibitem{substation-comms-survey},bibliography (human),not yet run
+475,\resulttodo{AUTHORS: add one edge/lightweight IDS survey or representative paper.},\bibitem{edge-ids-survey},bibliography (human),not yet run
+478,\resulttodo{AUTHORS: add one TinyML / resource-constrained detection reference.},\bibitem{tinyml-ids},bibliography (human),not yet run
+481,\resulttodo{AUTHORS: add one reference on inference-time missing features / feature robustness in tabular ML.},\bibitem{missing-features-ml},bibliography (human),not yet run

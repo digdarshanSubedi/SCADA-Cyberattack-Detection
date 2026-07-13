@@ -44,14 +44,14 @@ Built directly from the raw CSV header (`RTS_Paper/outputs/audit/feature_source_
 parsing the `R1-`/`R2-`/`R3-`/`R4-` prefixes vs. the 12 `control_panel_log*`, `relay*_log`,
 `snort_log*` columns. Confirms 116 PMU + 12 cyber/log = 128.
 
-**Proposed edge-visible definition (needs author sign-off before Phase D placement work):**
-a single relay's own 29 measurements (e.g., R1 only — voltage/current magnitude+angle,
-frequency, frequency-delta, impedance, impedance-angle, status) represent what one IED/relay
-at a single substation bay position can observe locally without aggregation. The 12 cyber/log
-features (control-panel, Snort, relay-log) are treated as substation-central because they are
-not tied to a single bay in this dataset's schema. **This is a proposal, not a confirmed
-definition** — per the ground rules, the placement analysis must not proceed until you confirm
-or adjust it.
+**CONFIRMED edge-visible definition (author-approved 2026-07-12):** a single relay's own 29
+measurements — voltage magnitude+angle (12), current magnitude+angle (12), frequency,
+frequency-delta, impedance, impedance-angle, and relay status (5) — represent what one IED/relay
+at a single substation bay position can observe locally without aggregation. Verified
+programmatically that none of the 12 Snort/control-panel/relay-log columns are included in any
+single relay's 29-feature group (`edge_visible_proposed=False` for all 12 in
+`feature_source_map.csv`; cross-checked directly against R1's column list). Placement analysis
+(Phase D) may proceed: **edge = R1's 29 features, central = all 128 features.**
 
 ## 5. RTC draft LaTeX file — NOT FOUND
 

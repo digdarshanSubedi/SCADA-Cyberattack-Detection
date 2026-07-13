@@ -1,0 +1,61 @@
+median_ms,p95_ms,p99_ms,mean_ms,throughput_records_per_sec,model,stage,model_size_bytes,memory_rss_mb,envelope,envelope_ms,d_agg_ms,placement,p95_plus_dagg_ms,verdict_pass
+0.998458,1.02537915,1.0666254099999999,1.0028919628,1001.5443814361746,Logistic Regression,preprocessing,10622.0,669.46875,,,,,,
+0.05675,0.05775,0.06283342000000001,0.05695913680000001,17621.145374449337,Logistic Regression,inference,10622.0,669.46875,,,,,,
+1.08,1.11196635,1.1690045900000001,1.0847722382,925.9259259259259,Logistic Regression,end_to_end,10622.0,669.46875,,,,,,
+,,,,,Logistic Regression,envelope_verdict,,,E1,10.0,0.0,edge,1.11196635,True
+,,,,,Logistic Regression,envelope_verdict,,,E1,10.0,2.0,central,3.1119663500000003,True
+,,,,,Logistic Regression,envelope_verdict,,,E1,10.0,5.0,central,6.11196635,True
+,,,,,Logistic Regression,envelope_verdict,,,E1,10.0,10.0,central,11.11196635,False
+,,,,,Logistic Regression,envelope_verdict,,,E2,16.7,0.0,edge,1.11196635,True
+,,,,,Logistic Regression,envelope_verdict,,,E2,16.7,2.0,central,3.1119663500000003,True
+,,,,,Logistic Regression,envelope_verdict,,,E2,16.7,5.0,central,6.11196635,True
+,,,,,Logistic Regression,envelope_verdict,,,E2,16.7,10.0,central,11.11196635,True
+,,,,,Logistic Regression,envelope_verdict,,,E3,100.0,0.0,edge,1.11196635,True
+,,,,,Logistic Regression,envelope_verdict,,,E3,100.0,2.0,central,3.1119663500000003,True
+,,,,,Logistic Regression,envelope_verdict,,,E3,100.0,5.0,central,6.11196635,True
+,,,,,Logistic Regression,envelope_verdict,,,E3,100.0,10.0,central,11.11196635,True
+0.93025,0.96916905,1.01721217,0.9356310294000001,1074.9798441279227,Random Forest,preprocessing,178447071.0,458.0625,,,,,,
+14.007207999999999,22.802217300000088,29.14647592000001,14.7788829332,71.39181484275811,Random Forest,inference,178447071.0,458.0625,,,,,,
+15.6688545,51.711375600000025,79.84638834000005,21.457871454600003,63.8208747167829,Random Forest,end_to_end,178447071.0,458.0625,,,,,,
+,,,,,Random Forest,envelope_verdict,,,E1,10.0,0.0,edge,51.711375600000025,False
+,,,,,Random Forest,envelope_verdict,,,E1,10.0,2.0,central,53.711375600000025,False
+,,,,,Random Forest,envelope_verdict,,,E1,10.0,5.0,central,56.711375600000025,False
+,,,,,Random Forest,envelope_verdict,,,E1,10.0,10.0,central,61.711375600000025,False
+,,,,,Random Forest,envelope_verdict,,,E2,16.7,0.0,edge,51.711375600000025,False
+,,,,,Random Forest,envelope_verdict,,,E2,16.7,2.0,central,53.711375600000025,False
+,,,,,Random Forest,envelope_verdict,,,E2,16.7,5.0,central,56.711375600000025,False
+,,,,,Random Forest,envelope_verdict,,,E2,16.7,10.0,central,61.711375600000025,False
+,,,,,Random Forest,envelope_verdict,,,E3,100.0,0.0,edge,51.711375600000025,True
+,,,,,Random Forest,envelope_verdict,,,E3,100.0,2.0,central,53.711375600000025,True
+,,,,,Random Forest,envelope_verdict,,,E3,100.0,5.0,central,56.711375600000025,True
+,,,,,Random Forest,envelope_verdict,,,E3,100.0,10.0,central,61.711375600000025,True
+1.0299585,1.7893316000000001,4.19188899000001,1.1918024308,970.9129057141623,XGBoost,preprocessing,769568.0,468.96875,,,,,,
+0.1364165,3.674033,8.905819170000001,0.6662243457999999,7330.491546110625,XGBoost,inference,769568.0,468.96875,,,,,,
+1.2235215,4.864431900000002,9.555722920000028,1.7378927971999998,817.3129773363198,XGBoost,end_to_end,769568.0,468.96875,,,,,,
+,,,,,XGBoost,envelope_verdict,,,E1,10.0,0.0,edge,4.864431900000002,True
+,,,,,XGBoost,envelope_verdict,,,E1,10.0,2.0,central,6.864431900000002,True
+,,,,,XGBoost,envelope_verdict,,,E1,10.0,5.0,central,9.864431900000003,True
+,,,,,XGBoost,envelope_verdict,,,E1,10.0,10.0,central,14.864431900000003,False
+,,,,,XGBoost,envelope_verdict,,,E2,16.7,0.0,edge,4.864431900000002,True
+,,,,,XGBoost,envelope_verdict,,,E2,16.7,2.0,central,6.864431900000002,True
+,,,,,XGBoost,envelope_verdict,,,E2,16.7,5.0,central,9.864431900000003,True
+,,,,,XGBoost,envelope_verdict,,,E2,16.7,10.0,central,14.864431900000003,True
+,,,,,XGBoost,envelope_verdict,,,E3,100.0,0.0,edge,4.864431900000002,True
+,,,,,XGBoost,envelope_verdict,,,E3,100.0,2.0,central,6.864431900000002,True
+,,,,,XGBoost,envelope_verdict,,,E3,100.0,5.0,central,9.864431900000003,True
+,,,,,XGBoost,envelope_verdict,,,E3,100.0,10.0,central,14.864431900000003,True
+1.0336045,1.3339122000000003,2.156050660000005,1.1022569446,967.4880478945283,Compact MLP,preprocessing,130414.0,472.984375,,,,,,
+0.0565,0.06208305,0.1353425900000002,0.0652772172,17699.11504424779,Compact MLP,inference,130414.0,472.984375,,,,,,
+1.160083,1.6895479000000002,2.811516170000002,1.2718222432000001,862.0072874096078,Compact MLP,end_to_end,130414.0,472.984375,,,,,,
+,,,,,Compact MLP,envelope_verdict,,,E1,10.0,0.0,edge,1.6895479000000002,True
+,,,,,Compact MLP,envelope_verdict,,,E1,10.0,2.0,central,3.6895479,True
+,,,,,Compact MLP,envelope_verdict,,,E1,10.0,5.0,central,6.6895479,True
+,,,,,Compact MLP,envelope_verdict,,,E1,10.0,10.0,central,11.6895479,False
+,,,,,Compact MLP,envelope_verdict,,,E2,16.7,0.0,edge,1.6895479000000002,True
+,,,,,Compact MLP,envelope_verdict,,,E2,16.7,2.0,central,3.6895479,True
+,,,,,Compact MLP,envelope_verdict,,,E2,16.7,5.0,central,6.6895479,True
+,,,,,Compact MLP,envelope_verdict,,,E2,16.7,10.0,central,11.6895479,True
+,,,,,Compact MLP,envelope_verdict,,,E3,100.0,0.0,edge,1.6895479000000002,True
+,,,,,Compact MLP,envelope_verdict,,,E3,100.0,2.0,central,3.6895479,True
+,,,,,Compact MLP,envelope_verdict,,,E3,100.0,5.0,central,6.6895479,True
+,,,,,Compact MLP,envelope_verdict,,,E3,100.0,10.0,central,11.6895479,True

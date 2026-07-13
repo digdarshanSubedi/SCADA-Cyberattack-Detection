@@ -2,3 +2,8 @@
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+
+# RTS_Paper cached fold models are large (RF fold files ~180MB each, exceed
+# GitHub's 100MB limit) and fully reproducible from run_loro.py + seeds.
+RTS_Paper/outputs/models/*.joblib
+RTS_Paper/outputs/models/*.pt

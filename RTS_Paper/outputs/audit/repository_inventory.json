@@ -34,9 +34,9 @@
     "numpy": "2.0.2",
     "pandas": "2.2.3",
     "sklearn": "1.6.1",
-    "xgboost": "NOT INSTALLED",
-    "shap": "NOT INSTALLED",
-    "torch": "NOT INSTALLED",
+    "xgboost": "2.1.4",
+    "shap": "0.49.1",
+    "torch": "2.8.0",
     "matplotlib": "3.9.4",
     "seaborn": "0.13.2",
     "scipy": "1.13.1"
@@ -44,5 +44,6 @@
   "git": {
     "branch": "rts-paper-extension",
     "last_commit": "2d591e7 Initial commit: SCADA leakage-aware evaluation paper, pipeline, and figures"
-  }
+  },
+  "env_note": "xgboost required brew install libomp on macOS (libomp.dylib not found by default); resolved 2026-07-12."
 }

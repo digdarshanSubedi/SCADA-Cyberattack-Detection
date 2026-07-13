@@ -1,0 +1,9 @@
+model,strategy,n_test_records_pooled,n_explained,fraction_explained,estimated_total_explain_time_sec
+Random Forest,explain_every_record,78377,78377,1.0,69071.71845964651
+Random Forest,explain_every_predicted_attack,78377,63017,0.8040241397348712,55535.3290145265
+Random Forest,explain_uncertain_only_0.4_0.6,78377,13515,0.1724357911121885,11910.436416067501
+Random Forest,explain_high_risk_only_ge_0.9,78377,19415,0.24771297702132003,17109.9610076175
+XGBoost,explain_every_record,78377,78377,1.0,88.25740056250001
+XGBoost,explain_every_predicted_attack,78377,62165,0.7931536037357898,70.00167531250001
+XGBoost,explain_uncertain_only_0.4_0.6,78377,10692,0.1364175714814295,12.039860250000002
+XGBoost,explain_high_risk_only_ge_0.9,78377,25551,0.3260012503668168,28.772022937500005

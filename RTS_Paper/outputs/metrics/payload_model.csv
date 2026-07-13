@@ -1,0 +1,22 @@
+feature_budget,n_features,representation,bytes_per_field,payload_bytes_per_record
+128,128,32-bit float,4,512
+128,128,16-bit quantized,2,256
+128,128,8-bit quantized,1,128
+64,64,32-bit float,4,256
+64,64,16-bit quantized,2,128
+64,64,8-bit quantized,1,64
+32,32,32-bit float,4,128
+32,32,16-bit quantized,2,64
+32,32,8-bit quantized,1,32
+16,16,32-bit float,4,64
+16,16,16-bit quantized,2,32
+16,16,8-bit quantized,1,16
+PMU only,116,32-bit float,4,464
+PMU only,116,16-bit quantized,2,232
+PMU only,116,8-bit quantized,1,116
+Cyber/log only,12,32-bit float,4,48
+Cyber/log only,12,16-bit quantized,2,24
+Cyber/log only,12,8-bit quantized,1,12
+"Edge (R1 only, 29 features)",29,32-bit float,4,116
+"Edge (R1 only, 29 features)",29,16-bit quantized,2,58
+"Edge (R1 only, 29 features)",29,8-bit quantized,1,29

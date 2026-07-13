@@ -1,0 +1,49 @@
+median_ms,p95_ms,p99_ms,mean_ms,throughput_records_per_sec,model,model_size_bytes,memory_rss_mb,envelope,envelope_ms,d_agg_ms,placement,p95_plus_dagg_ms,verdict_pass
+,,,,,Logistic Regression,,,E1,10.0,0.0,edge,1.11196635,True
+,,,,,Logistic Regression,,,E1,10.0,2.0,central,3.1119663500000003,True
+,,,,,Logistic Regression,,,E1,10.0,5.0,central,6.11196635,True
+,,,,,Logistic Regression,,,E1,10.0,10.0,central,11.11196635,False
+,,,,,Logistic Regression,,,E2,16.7,0.0,edge,1.11196635,True
+,,,,,Logistic Regression,,,E2,16.7,2.0,central,3.1119663500000003,True
+,,,,,Logistic Regression,,,E2,16.7,5.0,central,6.11196635,True
+,,,,,Logistic Regression,,,E2,16.7,10.0,central,11.11196635,True
+,,,,,Logistic Regression,,,E3,100.0,0.0,edge,1.11196635,True
+,,,,,Logistic Regression,,,E3,100.0,2.0,central,3.1119663500000003,True
+,,,,,Logistic Regression,,,E3,100.0,5.0,central,6.11196635,True
+,,,,,Logistic Regression,,,E3,100.0,10.0,central,11.11196635,True
+,,,,,Random Forest,,,E1,10.0,0.0,edge,51.711375600000025,False
+,,,,,Random Forest,,,E1,10.0,2.0,central,53.711375600000025,False
+,,,,,Random Forest,,,E1,10.0,5.0,central,56.711375600000025,False
+,,,,,Random Forest,,,E1,10.0,10.0,central,61.711375600000025,False
+,,,,,Random Forest,,,E2,16.7,0.0,edge,51.711375600000025,False
+,,,,,Random Forest,,,E2,16.7,2.0,central,53.711375600000025,False
+,,,,,Random Forest,,,E2,16.7,5.0,central,56.711375600000025,False
+,,,,,Random Forest,,,E2,16.7,10.0,central,61.711375600000025,False
+,,,,,Random Forest,,,E3,100.0,0.0,edge,51.711375600000025,True
+,,,,,Random Forest,,,E3,100.0,2.0,central,53.711375600000025,True
+,,,,,Random Forest,,,E3,100.0,5.0,central,56.711375600000025,True
+,,,,,Random Forest,,,E3,100.0,10.0,central,61.711375600000025,True
+,,,,,XGBoost,,,E1,10.0,0.0,edge,4.864431900000002,True
+,,,,,XGBoost,,,E1,10.0,2.0,central,6.864431900000002,True
+,,,,,XGBoost,,,E1,10.0,5.0,central,9.864431900000003,True
+,,,,,XGBoost,,,E1,10.0,10.0,central,14.864431900000003,False
+,,,,,XGBoost,,,E2,16.7,0.0,edge,4.864431900000002,True
+,,,,,XGBoost,,,E2,16.7,2.0,central,6.864431900000002,True
+,,,,,XGBoost,,,E2,16.7,5.0,central,9.864431900000003,True
+,,,,,XGBoost,,,E2,16.7,10.0,central,14.864431900000003,True
+,,,,,XGBoost,,,E3,100.0,0.0,edge,4.864431900000002,True
+,,,,,XGBoost,,,E3,100.0,2.0,central,6.864431900000002,True
+,,,,,XGBoost,,,E3,100.0,5.0,central,9.864431900000003,True
+,,,,,XGBoost,,,E3,100.0,10.0,central,14.864431900000003,True
+,,,,,Compact MLP,,,E1,10.0,0.0,edge,1.6895479000000002,True
+,,,,,Compact MLP,,,E1,10.0,2.0,central,3.6895479,True
+,,,,,Compact MLP,,,E1,10.0,5.0,central,6.6895479,True
+,,,,,Compact MLP,,,E1,10.0,10.0,central,11.6895479,False
+,,,,,Compact MLP,,,E2,16.7,0.0,edge,1.6895479000000002,True
+,,,,,Compact MLP,,,E2,16.7,2.0,central,3.6895479,True
+,,,,,Compact MLP,,,E2,16.7,5.0,central,6.6895479,True
+,,,,,Compact MLP,,,E2,16.7,10.0,central,11.6895479,True
+,,,,,Compact MLP,,,E3,100.0,0.0,edge,1.6895479000000002,True
+,,,,,Compact MLP,,,E3,100.0,2.0,central,3.6895479,True
+,,,,,Compact MLP,,,E3,100.0,5.0,central,6.6895479,True
+,,,,,Compact MLP,,,E3,100.0,10.0,central,11.6895479,True

@@ -1,0 +1,13 @@
+{
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "processor": "arm",
+  "python_version": "3.9.6",
+  "cpu_count_logical": 10,
+  "cpu_count_physical": 10,
+  "total_memory_gb": 32.0,
+  "sklearn_version": "1.6.1",
+  "xgboost_version": "2.1.4",
+  "warmup_iterations": 500,
+  "timed_iterations": 5000,
+  "batch_size": 1
+}

@@ -1,0 +1,3 @@
+model,pred_only_median_ms,pred_only_p95_ms,explain_only_median_ms,explain_only_p95_ms,pred_plus_explain_median_ms,pred_plus_explain_p95_ms,explanations_per_sec,fits_e3_every_record
+Random Forest,14.458999500000001,28.6751771,881.2753545,972.5494256499998,897.6307705,996.3117166999999,1.134719125973243,False
+XGBoost,0.1250205,0.22056009999999987,1.1260625000000002,1.3254565999999999,1.262979,1.5159789,888.050174834878,True

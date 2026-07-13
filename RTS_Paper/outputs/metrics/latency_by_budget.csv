@@ -1,0 +1,21 @@
+feature_budget,model,p95_ms,n_features
+64,Logistic Regression,1.2227062499999997,64
+64,Random Forest,28.623570499999996,64
+64,XGBoost,0.9703476,64
+64,Compact MLP,0.899041,64
+32,Logistic Regression,1.0264482499999998,32
+32,Random Forest,15.992350649999999,32
+32,XGBoost,0.91061635,32
+32,Compact MLP,0.8524416499999999,32
+16,Logistic Regression,0.7807896,16
+16,Random Forest,15.352593749999999,16
+16,XGBoost,0.81816905,16
+16,Compact MLP,0.8868264499999999,16
+pmu_only,Logistic Regression,1.1324726,116
+pmu_only,Random Forest,15.768783299999997,116
+pmu_only,XGBoost,1.1168082999999998,116
+pmu_only,Compact MLP,1.0959399,116
+cyber_log_only,Logistic Regression,0.7034062499999999,12
+cyber_log_only,Random Forest,15.452677099999999,12
+cyber_log_only,XGBoost,0.9995021,12
+cyber_log_only,Compact MLP,0.8272006499999996,12
