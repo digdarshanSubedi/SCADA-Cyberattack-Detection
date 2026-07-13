@@ -55,6 +55,19 @@ def logs_unavailable(X: pd.DataFrame) -> pd.DataFrame:
     return Xd
 
 
+def all_pmu_unavailable(X: pd.DataFrame) -> pd.DataFrame:
+    """All 116 PMU features unavailable together (complements logs_unavailable's
+    12 cyber/log features): pmu_voltage (48) + pmu_current (48) + freq_impedance (16)
+    + relay_status (4) = 116, verified against feature_source_map.csv's pmu count."""
+    cols = []
+    for g in ("pmu_voltage", "pmu_current", "freq_impedance", "relay_status"):
+        cols.extend(FEATURE_GROUPS[g](list(X.columns)))
+    Xd = X.copy()
+    if cols:
+        Xd[cols] = np.nan
+    return Xd
+
+
 def relay_loss(X: pd.DataFrame, relay: str) -> pd.DataFrame:
     prefixes = RELAY_PREFIXES[relay]
     cols = [c for c in X.columns if c.startswith(prefixes)]

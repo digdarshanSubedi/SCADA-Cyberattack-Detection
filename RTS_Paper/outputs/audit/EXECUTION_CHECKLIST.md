@@ -1,7 +1,14 @@
 # RTC 2026 Extension — Execution Checklist
 
-Deadline: 2026-07-17 23:59 Chicago. Internal target: submit 2026-07-16. Today: 2026-07-12.
+Deadline: 2026-07-17 23:59 Chicago. Internal target: submit 2026-07-16. Today: 2026-07-13.
 Updated after every meaningful step. This file is the single source of truth for progress.
+
+## Post-verification-packet fixes (2026-07-13)
+- [x] Committed all Phase B-F work to `rts-paper-extension` (commit `f612f9f`) — previously only Phase A was committed; see `VERIFICATION_PACKET.md` Section 2.3 for the gap this closes.
+- [x] Saved the PMU-group-unavailability ablation as `RTS_Paper/scripts/degradations.py::all_pmu_unavailable` + `RTS_Paper/scripts/run_pmu_ablation.py` (previously an unsaved inline script). Reran from scratch after saving; diffed against the original inline output — **bit-for-bit identical** on all 6 numeric columns across all 60 rows. No longer a reproducibility gap.
+- [x] Fixed the CNN/Limitations cross-reference: added a full paragraph to `\section{Threats to Validity and Limitations}` (now labeled `\label{sec:limitations}`) explaining the CNN's exclusion, the OpenMP crash/workaround, and that its Table IV numbers are prior-work reference values, not re-derived results. The two "see Limitations" table cells (latency, robustness tables) now point to real content.
+- [x] Softened "five detectors" language in 4 places (abstract, introduction ×2, contributions list, Models subsection) to explicitly say four detectors were newly evaluated and the CNN is reported from prior work only. Recompiled clean (8 pages now, was 7), prohibited-claim grep still shows only the same 8 pre-verified disclaimers, no new violations.
+- [ ] Still open, unchanged from before: 4 bibliography slots, IEC 61850-5 / IEC TR 61850-90-4 / IEEE C37.118 citation verification against the actual standards — both explicitly deferred to the user's own judgment per their instruction, not attempted by the agent.
 
 ## Phase A — Continuity audit
 - [x] Repository inventory, baseline verification (exact match to plan) — `RTS_Paper/outputs/audit/`

@@ -21,11 +21,11 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Communication Requirements in Digital Substations}{2}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-C}}Low-Latency and Resource-Constrained Detection}{2}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-D}}Evaluation Boundaries and Dataset Shift}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-E}}Explainability for Operational Review}{2}{}\protected@file@percent }
 \citation{iec61850-5}
 \citation{ieee-c37118}
 \@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Audited dataset composition.}}{3}{}\protected@file@percent }
 \newlabel{tab:dataset}{{I}{3}{}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-E}}Explainability for Operational Review}{3}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {III}Dataset and Problem Formulation}{3}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Dataset}{3}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Temporal Limitation}{3}{}\protected@file@percent }
@@ -46,35 +46,34 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Feature-Budget Experiments}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-E}}Availability-Degradation Experiments}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-F}}Thresholds and Explanation Overhead}{4}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Payload (bytes/record) versus P95 end-to-end latency (ms) for each model at the 128-feature (central) and edge-visible (29-feature) budgets; marker size encodes run-aware ROC-AUC; horizontal lines mark envelopes E1--E3.}}{4}{}\protected@file@percent }
-\newlabel{fig:tradespace}{{1}{4}{}{figure.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-G}}Metrics}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {VI}Results}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-A}}Unseen-Run Baseline}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-B}}Latency Against the Envelopes}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-C}}Payload--Latency--Quality Trade Space}{4}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Baseline performance under random and run-aware evaluation. Run-aware values are mean $\pm $ standard deviation across fifteen held-out runs.}}{5}{}\protected@file@percent }
 \newlabel{tab:baseline-results}{{IV}{5}{}{table.4}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Batch-size-one end-to-end latency and envelope verdicts (\text  {$\mathsurround \z@ \mathchar "458$}{} = P95 fits).}}{5}{}\protected@file@percent }
 \newlabel{tab:latency}{{V}{5}{}{table.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Payload (bytes/record) versus P95 end-to-end latency (ms) for each model at the 128-feature (central) and edge-visible (29-feature) budgets; marker size encodes run-aware ROC-AUC; horizontal lines mark envelopes E1--E3.}}{5}{}\protected@file@percent }
+\newlabel{fig:tradespace}{{1}{5}{}{figure.1}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Run-aware quality, latency, and payload by feature budget.}}{5}{}\protected@file@percent }
 \newlabel{tab:feature-budget}{{VI}{5}{}{table.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-C}}Payload--Latency--Quality Trade Space}{5}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Run-aware F1 as missing telemetry increases from 5\% to 30\%, mean $\pm $ SD over 5 seeds and 15 folds.}}{5}{}\protected@file@percent }
 \newlabel{fig:missingness}{{2}{5}{}{figure.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-D}}Availability Robustness}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-E}}Edge Versus Central Placement}{5}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {VII}{\ignorespaces Run-aware ROC-AUC under availability degradation of held-out test data.}}{6}{}\protected@file@percent }
 \newlabel{tab:robustness}{{VII}{6}{}{table.7}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {VIII}{\ignorespaces Placement comparison: unseen-run quality and modeled end-to-end latency.}}{6}{}\protected@file@percent }
 \newlabel{tab:placement}{{VIII}{6}{}{table.8}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {IX}{\ignorespaces Held-out-run alert behavior under training-selected thresholds.}}{6}{}\protected@file@percent }
 \newlabel{tab:thresholds}{{IX}{6}{}{table.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-E}}Edge Versus Central Placement}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-F}}Thresholds and Explanation Overhead Inside the Budget}{6}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {X}{\ignorespaces Prediction and explanation latency against envelope E3.}}{6}{}\protected@file@percent }
 \newlabel{tab:explain}{{X}{6}{}{table.10}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-F}}Thresholds and Explanation Overhead Inside the Budget}{6}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {VII}Discussion}{6}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-A}}Budgets Convert Benchmarks into Engineering Verdicts}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-B}}Run Shift and Communication Degradation Are Distinct Risks}{6}{}\protected@file@percent }
 \bibcite{sahani2023machine}{1}
 \bibcite{alimi2021review}{2}
 \bibcite{pan2015hybrid}{3}
@@ -85,6 +84,14 @@
 \bibcite{chen2016xgboost}{8}
 \bibcite{iec61850-5}{9}
 \bibcite{iec61850-90-4}{10}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-B}}Run Shift and Communication Degradation Are Distinct Risks}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-C}}Payload Reduction Is a Communication Decision, Not Only a Compute Decision}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-D}}Placement Determines Which Budget Binds}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-E}}Alert Load and Explanation Are Part of the Same Envelope}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}Threats to Validity and Limitations}{7}{}\protected@file@percent }
+\newlabel{sec:limitations}{{VIII}{7}{}{section.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IX}Conclusion}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{7}{}\protected@file@percent }
 \bibcite{ieee-c37118}{11}
 \bibcite{substation-comms-survey}{12}
 \bibcite{edge-ids-survey}{13}
@@ -94,10 +101,4 @@
 \bibcite{kadri2025physics}{17}
 \bibcite{cibin2026dataset}{18}
 \bibcite{huang2023beyond}{19}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-C}}Payload Reduction Is a Communication Decision, Not Only a Compute Decision}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-D}}Placement Determines Which Budget Binds}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-E}}Alert Load and Explanation Are Part of the Same Envelope}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {VIII}Threats to Validity and Limitations}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {IX}Conclusion}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{References}{7}{}\protected@file@percent }
-\gdef \@abspage@last{7}
+\gdef \@abspage@last{8}
