@@ -313,7 +313,7 @@ The output timestamps postdate the final script edits in both cases, consistent 
 - **Fix:** added `\renewcommand{\ttdefault}{cmtt}` to the preamble — the exact same fix already present in the original paper's auto-generated LaTeX (`src/run_all.py::write_paper`), so this was a known, previously-solved issue in this repository that the new draft's preamble simply hadn't inherited.
 - **Regeneration confirmation:** recompiled twice after the fix (two-pass pdflatex for cross-references); final PDF is 7 pages, confirmed via `pdftoppm` visual rendering of pages 4-5 that tables and the two included figures render without errors or overlap.
 
-### 3.8 `fig_tradespace` legend overlapping data points (cosmetic, caught by visual inspection, fixed twice)
+### 3.8 `fig04_payload_latency_quality` legend overlapping data points (cosmetic, caught by visual inspection, fixed twice)
 - **What was wrong:** the headline trade-space figure's legend, first placed inside the plot area then via `bbox_to_anchor` outside it, visually overlapped the rightmost cluster of data points in both attempts because `fig.tight_layout()` doesn't reserve canvas space for a legend placed outside the axes.
 - **How/when caught:** visual inspection of the rendered PNG after each build.
 - **Fix:** used `bbox_inches="tight"` on `fig.savefig()` instead of `fig.tight_layout()`, which expands the canvas to include the external legend.

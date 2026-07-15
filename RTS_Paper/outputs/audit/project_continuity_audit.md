@@ -119,7 +119,7 @@ existing `run_all.py` will be left untouched under `src/`, and the new harness w
 - Missingness / group-unavailability / relay-loss test-time transforms
 - SHAP timing for RF+XGB (after `pip install shap`)
 - Edge-visible feature mapping — author confirmation, then placement table
-- Headline `fig_tradespace`
+- Headline `fig04_payload_latency_quality`
 
 **Must run (P1, cut first if behind schedule):**
 - Feature-budget experiments (128/64/32/16/PMU-only/cyber-log-only)

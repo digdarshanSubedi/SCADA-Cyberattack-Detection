@@ -12,13 +12,13 @@
 \usepackage{microtype}
 
 \renewcommand{\ttdefault}{cmtt}
-\graphicspath{{../figures/}}
+\graphicspath{{figures/}}
 
 \newcommand{\paperfigure}[4]{%
 \begin{figure}[H]
 \centering
-\IfFileExists{../figures/#1}{%
-  \includegraphics[width=#2\columnwidth]{../figures/#1}%
+\IfFileExists{figures/#1}{%
+  \includegraphics[width=#2\columnwidth]{figures/#1}%
 }{%
   \fbox{\parbox[c][1.38in][c]{0.92\columnwidth}{%
     \centering\small

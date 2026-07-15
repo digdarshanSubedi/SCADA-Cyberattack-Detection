@@ -37,47 +37,95 @@ plt.rcParams.update({"axes.edgecolor": "#333333", "axes.labelcolor": "#222222", 
 
 
 def fig_tradespace() -> None:
-    lat = pd.read_csv(METRICS_DIR / "latency_and_envelope_verdicts.csv")
-    e2e = lat[lat.stage == "end_to_end"][["model", "p95_ms"]]
+    """Paper Fig. 4 (fig04_payload_latency_quality)."""
     payload = pd.read_csv(METRICS_DIR / "payload_model.csv")
-    payload_128 = payload[(payload.feature_budget == "128") & (payload.representation == "32-bit float")][["payload_bytes_per_record"]].iloc[0, 0]
-    payload_edge = payload[(payload.feature_budget.str.contains("Edge")) & (payload.representation == "32-bit float")][["payload_bytes_per_record"]].iloc[0, 0]
+    payload = payload[(payload.representation == "32-bit float") &
+                      (payload.feature_budget.astype(str).isin(["128", "64", "32", "16"]))]
+    payload = payload.assign(feature_budget=payload.feature_budget.astype(int))
 
-    macro_central = pd.read_csv(METRICS_DIR / "phase_b_loro_clean_macro.csv")
-    macro_edge = pd.read_csv(METRICS_DIR / "phase_b_loro_clean_macro_edge_r1.csv")
+    lat_128 = pd.read_csv(METRICS_DIR / "latency_and_envelope_verdicts.csv")
+    lat_128 = lat_128[lat_128.stage == "end_to_end"][["model", "p95_ms"]]
+    latency_budget = pd.read_csv(METRICS_DIR / "latency_by_budget.csv")
+    latency_budget = latency_budget[latency_budget.feature_budget.astype(str).isin(["64", "32", "16"])]
+    latency_budget = latency_budget.assign(feature_budget=latency_budget.feature_budget.astype(int))
 
-    fig, ax = plt.subplots(figsize=(6.4, 4.6))
-    for _, row in e2e.iterrows():
-        model = row["model"]
-        color = MODEL_COLORS[model]
-        auc_c = macro_central[macro_central.model == model]["roc_auc_mean"].iloc[0]
-        auc_e = macro_edge[macro_edge.model == model]["roc_auc_mean"].iloc[0]
-        ax.scatter(payload_128, row["p95_ms"], s=80 + 400 * auc_c, color=color, alpha=0.85, edgecolor=BLUE_DARK, linewidth=0.6, marker="o", label=f"{model} (central, 128f)")
-        ax.scatter(payload_edge, row["p95_ms"], s=80 + 400 * auc_e, color=color, alpha=0.55, edgecolor=GRAY, linewidth=0.6, marker="^", label=f"{model} (edge, 29f)")
+    macro_128 = pd.read_csv(METRICS_DIR / "phase_b_loro_clean_macro.csv")
+    macro_budget = pd.read_csv(METRICS_DIR / "feature_budget_ranked_macro.csv")
+
+    rows = []
+    for model in MODEL_COLORS:
+        payload_128 = payload[payload.feature_budget == 128]["payload_bytes_per_record"].iloc[0]
+        p95_128 = lat_128[lat_128.model == model]["p95_ms"].iloc[0]
+        auc_128 = macro_128[macro_128.model == model]["roc_auc_mean"].iloc[0]
+        f1_128 = macro_128[macro_128.model == model]["f1_mean"].iloc[0]
+        rows.append({"model": model, "feature_budget": 128, "payload_bytes_per_record": payload_128,
+                     "p95_ms": p95_128, "roc_auc_mean": auc_128, "f1_mean": f1_128})
+        for budget in [64, 32, 16]:
+            payload_b = payload[payload.feature_budget == budget]["payload_bytes_per_record"].iloc[0]
+            p95_b = latency_budget[(latency_budget.model == model) &
+                                   (latency_budget.feature_budget == budget)]["p95_ms"].iloc[0]
+            macro_b = macro_budget[(macro_budget.model == model) &
+                                   (macro_budget.feature_budget == budget)].iloc[0]
+            rows.append({"model": model, "feature_budget": budget, "payload_bytes_per_record": payload_b,
+                         "p95_ms": p95_b, "roc_auc_mean": macro_b["roc_auc_mean"],
+                         "f1_mean": macro_b["f1_mean"]})
+
+    df = pd.DataFrame(rows)
+    fig, axes = plt.subplots(1, 2, figsize=(7.2, 3.35), sharex=True)
+    marker_map = {128: "o", 64: "s", 32: "D", 16: "^"}
+
+    for model, color in MODEL_COLORS.items():
+        g = df[df.model == model].sort_values("payload_bytes_per_record", ascending=False)
+        axes[0].plot(g["payload_bytes_per_record"], g["p95_ms"], color=color, linewidth=1.5,
+                     marker="o", markersize=4.8, label=model)
+        axes[1].plot(g["payload_bytes_per_record"], g["roc_auc_mean"], color=color, linewidth=1.5,
+                     marker="o", markersize=4.8, label=model)
+        for _, point in g.iterrows():
+            for ax, y_col in [(axes[0], "p95_ms"), (axes[1], "roc_auc_mean")]:
+                ax.scatter(point["payload_bytes_per_record"], point[y_col],
+                           s=62, color=color, marker=marker_map[point["feature_budget"]],
+                           edgecolor="#222222", linewidth=0.45, zorder=3)
 
     for env_name, env_ms in ENVELOPES_MS.items():
-        ax.axhline(env_ms, color=GRAY, linestyle="--", linewidth=1)
-        ax.text(ax.get_xlim()[1] if ax.get_xlim()[1] > 0 else 600, env_ms, f" {env_name}={env_ms:.1f}ms", va="bottom", fontsize=8, color=GRAY)
+        axes[0].axhline(env_ms, color=GRAY, linestyle="--", linewidth=0.8, alpha=0.75)
+        axes[0].text(540, env_ms, f"{env_name}", va="bottom", ha="right", fontsize=6.6, color=GRAY)
 
-    ax.set_xscale("log")
-    ax.set_yscale("log")
-    ax.set_xlabel("Payload bytes/record (32-bit float, log scale)")
-    ax.set_ylabel("End-to-end P95 latency, ms (log scale)")
-    ax.set_title("Trade-space: payload, latency, and run-aware ROC-AUC (marker size)")
-    handles, labels = ax.get_legend_handles_labels()
-    seen = {}
-    for h, l in zip(handles, labels):
-        if l not in seen:
-            seen[l] = h
-    ax.legend(seen.values(), seen.keys(), frameon=False, fontsize=6.5, loc="center left", bbox_to_anchor=(1.02, 0.5), ncol=1)
-    sns.despine(ax=ax)
-    fig.savefig(FIG_DIR / "fig_tradespace.pdf", bbox_inches="tight")
-    fig.savefig(FIG_DIR / "fig_tradespace.png", dpi=300, bbox_inches="tight")
+    axes[0].set_xscale("log")
+    axes[0].set_yscale("log")
+    axes[0].set_xlim(56, 580)
+    axes[0].set_ylim(0.65, 120)
+    axes[0].set_xticks([64, 128, 256, 512])
+    axes[0].set_xticklabels(["64\n16f", "128\n32f", "256\n64f", "512\n128f"])
+    axes[0].set_xlabel("Payload bytes/record")
+    axes[0].set_ylabel("P95 latency (ms)")
+    axes[0].set_title("(a) Latency vs. payload")
+
+    axes[1].set_xscale("log")
+    axes[1].set_xlim(56, 580)
+    axes[1].set_xticks([64, 128, 256, 512])
+    axes[1].set_xticklabels(["64\n16f", "128\n32f", "256\n64f", "512\n128f"])
+    axes[1].set_ylim(0.60, 0.74)
+    axes[1].set_xlabel("Payload bytes/record")
+    axes[1].set_ylabel("Run-aware ROC-AUC")
+    axes[1].set_title("(b) Quality vs. payload")
+
+    handles, labels = axes[1].get_legend_handles_labels()
+    fig.legend(handles, labels, frameon=False, fontsize=7.2, loc="lower center",
+               ncol=4, bbox_to_anchor=(0.5, -0.02))
+    fig.suptitle("Feature-budget trade-off from 128 to 16 transmitted fields", y=1.02, fontsize=10)
+    for ax in axes:
+        sns.despine(ax=ax)
+        ax.grid(True, which="major", linewidth=0.5, alpha=0.45)
+        ax.grid(True, which="minor", linewidth=0.25, alpha=0.2)
+    fig.tight_layout(rect=[0, 0.08, 1, 1])
+    fig.savefig(FIG_DIR / "fig04_payload_latency_quality.pdf", bbox_inches="tight")
+    fig.savefig(FIG_DIR / "fig04_payload_latency_quality.png", dpi=300, bbox_inches="tight")
     plt.close(fig)
-    print("wrote fig_tradespace.{pdf,png}")
+    print("wrote fig04_payload_latency_quality.{pdf,png}")
 
 
 def fig_missingness() -> None:
+    """Paper Fig. 5 (fig05_missing_telemetry_robustness)."""
     df = pd.read_csv(ROBUST_DIR / "missingness_results.csv")
     agg = df.groupby(["model", "rate"])["f1"].agg(["mean", "std"]).reset_index()
     fig, ax = plt.subplots(figsize=(5.6, 3.8))
@@ -89,10 +137,10 @@ def fig_missingness() -> None:
     ax.legend(frameon=False, fontsize=8)
     sns.despine(ax=ax)
     fig.tight_layout()
-    fig.savefig(FIG_DIR / "fig_missingness.pdf")
-    fig.savefig(FIG_DIR / "fig_missingness.png", dpi=300)
+    fig.savefig(FIG_DIR / "fig05_missing_telemetry_robustness.pdf")
+    fig.savefig(FIG_DIR / "fig05_missing_telemetry_robustness.png", dpi=300)
     plt.close(fig)
-    print("wrote fig_missingness.{pdf,png}")
+    print("wrote fig05_missing_telemetry_robustness.{pdf,png}")
 
 
 def fig_relay_loss() -> None:
@@ -142,6 +190,9 @@ def fig_threshold_tradeoffs() -> None:
 
 
 def fig_placement_comparison() -> None:
+    """Paper Fig. 6 (fig06_edge_vs_central). Already includes the
+    worst-relay-loss placement condition, so fig_relay_loss.png stays a
+    separate supporting figure rather than becoming Fig. 6."""
     df = pd.read_csv(METRICS_DIR / "placement_comparison_table.csv")
     order = ["Edge (edge-visible features)", "Central, clean aggregation", "Central, 10% missing",
               "Central, logs unavailable", "Central, one relay lost (worst)"]
@@ -158,10 +209,10 @@ def fig_placement_comparison() -> None:
     ax.legend(frameon=False, fontsize=7)
     sns.despine(ax=ax)
     fig.tight_layout()
-    fig.savefig(FIG_DIR / "fig_placement_comparison.pdf")
-    fig.savefig(FIG_DIR / "fig_placement_comparison.png", dpi=300)
+    fig.savefig(FIG_DIR / "fig06_edge_vs_central.pdf")
+    fig.savefig(FIG_DIR / "fig06_edge_vs_central.png", dpi=300)
     plt.close(fig)
-    print("wrote fig_placement_comparison.{pdf,png}")
+    print("wrote fig06_edge_vs_central.{pdf,png}")
 
 
 def main() -> None:

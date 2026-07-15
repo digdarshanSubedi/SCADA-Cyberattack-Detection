@@ -1,0 +1,2218 @@
+{
+  "repository_root": "/Users/digdarshansubedi/Documents/Paper Publications/Saudi Arabia Sustainable Energy - Cuber Security Paper",
+  "final_validated_output_directory": "/Users/digdarshansubedi/Documents/Paper Publications/Saudi Arabia Sustainable Energy - Cuber Security Paper/RTS_Paper/outputs",
+  "model_scope": {
+    "primary_models": [
+      "Logistic Regression",
+      "Random Forest",
+      "XGBoost",
+      "Compact MLP"
+    ],
+    "diagnostic_only": "Feature-space CNN"
+  },
+  "feature_budget_summary": [
+    {
+      "model": "Logistic Regression",
+      "n_folds": 15,
+      "auc_128_mean": 0.6870339099809087,
+      "auc_128_std": 0.030513565960545504,
+      "auc_16_mean": 0.6293647800585219,
+      "auc_16_std": 0.03109549162440035,
+      "mean_paired_diff_auc_16_minus_128": -0.05766912992238684,
+      "std_paired_diff": 0.02852887255287685,
+      "median_paired_diff": -0.060086550395192284,
+      "folds_16_better": 1,
+      "bootstrap95_ci_low": -0.07068300620580369,
+      "bootstrap95_ci_high": -0.04301311945703582,
+      "ci_method": "paired nonparametric bootstrap over 15 folds; 50000 resamples; seed=20260713"
+    },
+    {
+      "model": "Random Forest",
+      "n_folds": 15,
+      "auc_128_mean": 0.6767534011217227,
+      "auc_128_std": 0.028791835339085522,
+      "auc_16_mean": 0.7213509544170686,
+      "auc_16_std": 0.02899941572398945,
+      "mean_paired_diff_auc_16_minus_128": 0.04459755329534618,
+      "std_paired_diff": 0.021098429535156685,
+      "median_paired_diff": 0.04561022150641769,
+      "folds_16_better": 15,
+      "bootstrap95_ci_low": 0.034226363890452305,
+      "bootstrap95_ci_high": 0.05478084641315238,
+      "ci_method": "paired nonparametric bootstrap over 15 folds; 50000 resamples; seed=20260713"
+    },
+    {
+      "model": "XGBoost",
+      "n_folds": 15,
+      "auc_128_mean": 0.7015302393007636,
+      "auc_128_std": 0.031110024264343124,
+      "auc_16_mean": 0.7078250729148942,
+      "auc_16_std": 0.028216251900086264,
+      "mean_paired_diff_auc_16_minus_128": 0.006294833614130494,
+      "std_paired_diff": 0.018289642633147,
+      "median_paired_diff": 0.0020924741851321427,
+      "folds_16_better": 9,
+      "bootstrap95_ci_low": -0.002166925519717994,
+      "bootstrap95_ci_high": 0.015694445112977257,
+      "ci_method": "paired nonparametric bootstrap over 15 folds; 50000 resamples; seed=20260713"
+    },
+    {
+      "model": "Compact MLP",
+      "n_folds": 15,
+      "auc_128_mean": 0.6827228129921425,
+      "auc_128_std": 0.022332481920764986,
+      "auc_16_mean": 0.7064191601647882,
+      "auc_16_std": 0.027170666035091606,
+      "mean_paired_diff_auc_16_minus_128": 0.023696347172645727,
+      "std_paired_diff": 0.018923616012793368,
+      "median_paired_diff": 0.018517373520032354,
+      "folds_16_better": 14,
+      "bootstrap95_ci_low": 0.014785014880823939,
+      "bootstrap95_ci_high": 0.03330275592869851,
+      "ci_method": "paired nonparametric bootstrap over 15 folds; 50000 resamples; seed=20260713"
+    }
+  ],
+  "throughput_check": [
+    {
+      "model": "Logistic Regression",
+      "median_ms": 1.08,
+      "reported_records_per_sec": 925.925925925926,
+      "calculated_1000_over_median": 925.9259259259259,
+      "diff": 1.1368683772161603e-13
+    },
+    {
+      "model": "Random Forest",
+      "median_ms": 15.6688545,
+      "reported_records_per_sec": 63.8208747167829,
+      "calculated_1000_over_median": 63.8208747167829,
+      "diff": 0.0
+    },
+    {
+      "model": "XGBoost",
+      "median_ms": 1.2235215,
+      "reported_records_per_sec": 817.3129773363198,
+      "calculated_1000_over_median": 817.3129773363198,
+      "diff": 0.0
+    },
+    {
+      "model": "Compact MLP",
+      "median_ms": 1.160083,
+      "reported_records_per_sec": 862.0072874096078,
+      "calculated_1000_over_median": 862.0072874096078,
+      "diff": 0.0
+    }
+  ],
+  "top16_features_by_model_fold": [
+    {
+      "model": "Logistic Regression",
+      "fold_id": 1,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R2-PM5:I",
+        "R4-PM7:V",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R4-PA:ZH",
+        "R3-PA:ZH",
+        "R2-PM1:V",
+        "R2-PA:ZH",
+        "R4-PM1:V",
+        "R4-PA2:VH",
+        "R2-PM3:V",
+        "R1-PA:ZH"
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "fold_id": 2,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R4-PA:ZH",
+        "R1-PA:ZH",
+        "R2-PA:ZH",
+        "R3-PA:ZH",
+        "R2-PM1:V",
+        "R4-PM3:V",
+        "R2-PM7:V",
+        "R4-PM1:V"
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "fold_id": 3,
+      "features": [
+        "R3-PM2:V",
+        "R4-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R2-PM5:I",
+        "R4-PM3:V",
+        "R4-PA:ZH",
+        "R1-PA:ZH",
+        "R2-PA:ZH",
+        "R1-PA3:VH",
+        "R4-PA3:VH",
+        "R1-PA2:VH",
+        "R3-PA:ZH"
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "fold_id": 4,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R4-PA:ZH",
+        "R2-PA:ZH",
+        "R1-PA:ZH",
+        "R3-PA:ZH",
+        "R4-PM3:V",
+        "R2-PM1:V",
+        "R1-PA3:VH",
+        "R2-PA3:VH"
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "fold_id": 5,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R4-PM7:V",
+        "R2-PA:ZH",
+        "R4-PA:ZH",
+        "R2-PM1:V",
+        "R3-PA:ZH",
+        "R1-PA:ZH",
+        "R4-PM3:V",
+        "R1-PA3:VH",
+        "R4-PA3:VH"
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "fold_id": 6,
+      "features": [
+        "R3-PM2:V",
+        "R4-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R2-PM5:I",
+        "R3-PM5:I",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R1-PA:ZH",
+        "R2-PA:ZH",
+        "R4-PA:ZH",
+        "R4-PM3:V",
+        "R2-PM1:V",
+        "R3-PA:ZH",
+        "R4-PA3:VH",
+        "R4-PM1:V"
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "fold_id": 7,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R3-PM5:I",
+        "R4-PM5:I",
+        "R4-PM7:V",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R1-PA:ZH",
+        "R2-PM1:V",
+        "R3-PA:ZH",
+        "R2-PA:ZH",
+        "R4-PA:ZH",
+        "R4-PM3:V",
+        "R4-PM1:V",
+        "R2-PA3:VH"
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "fold_id": 8,
+      "features": [
+        "R3-PM2:V",
+        "R4-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R2-PM5:I",
+        "R3-PM5:I",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R1-PA:ZH",
+        "R2-PA:ZH",
+        "R3-PA:ZH",
+        "R4-PM3:V",
+        "R4-PA:ZH",
+        "R2-PM1:V",
+        "R4-PM1:V",
+        "R1-PA2:VH"
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "fold_id": 9,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R4-PM5:I",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R3-PM5:I",
+        "R4-PA:ZH",
+        "R4-PM3:V",
+        "R2-PM1:V",
+        "R3-PA3:VH",
+        "R3-PA:ZH",
+        "R1-PA3:VH",
+        "R2-PA:ZH",
+        "R4-PM1:V"
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "fold_id": 10,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R3-PM5:I",
+        "R4-PM5:I",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R4-PM1:V",
+        "R4-PA:ZH",
+        "R2-PA:ZH",
+        "R1-PA:ZH",
+        "R4-PM3:V",
+        "R3-PA:ZH",
+        "R2-PM1:V",
+        "R2-PA2:VH"
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "fold_id": 11,
+      "features": [
+        "R4-PM2:V",
+        "R1-PM2:V",
+        "R3-PM2:V",
+        "R4-PM7:V",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R1-PA:ZH",
+        "R4-PA:ZH",
+        "R2-PA:ZH",
+        "R4-PM3:V",
+        "R2-PM1:V",
+        "R2-PM3:V",
+        "R3-PA:ZH",
+        "R4-PM1:V"
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "fold_id": 12,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R4-PM5:I",
+        "R1-PM5:I",
+        "R2-PM5:I",
+        "R4-PA:ZH",
+        "R3-PM5:I",
+        "R3-PA:ZH",
+        "R1-PA:ZH",
+        "R2-PM1:V",
+        "R2-PA:ZH",
+        "R4-PM1:V",
+        "R4-PM3:V",
+        "R1-PA2:VH"
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "fold_id": 13,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R3-PM5:I",
+        "R1-PM5:I",
+        "R2-PM5:I",
+        "R4-PM5:I",
+        "R3-PA:ZH",
+        "R1-PA:ZH",
+        "R4-PA:ZH",
+        "R2-PM7:V",
+        "R2-PM1:V",
+        "R2-PA:ZH",
+        "R4-PM1:V",
+        "R4-PM3:V"
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "fold_id": 14,
+      "features": [
+        "R3-PM2:V",
+        "R4-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R4-PM5:I",
+        "R2-PM5:I",
+        "R3-PM5:I",
+        "R1-PM5:I",
+        "R2-PA:ZH",
+        "R3-PA:ZH",
+        "R4-PA:ZH",
+        "R1-PA:ZH",
+        "R2-PM1:V",
+        "R2-PM7:V",
+        "R4-PM1:V",
+        "R4-PM3:V"
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "fold_id": 15,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R3-PM5:I",
+        "R2-PM5:I",
+        "R4-PM5:I",
+        "R1-PM5:I",
+        "R3-PA:ZH",
+        "R4-PA:ZH",
+        "R4-PM3:V",
+        "R2-PA:ZH",
+        "R1-PA:ZH",
+        "R2-PM1:V",
+        "R3-PA3:VH",
+        "R1-PA3:VH"
+      ]
+    },
+    {
+      "model": "Random Forest",
+      "fold_id": 1,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R2-PM5:I",
+        "R4-PM7:V",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R4-PA:ZH",
+        "R3-PA:ZH",
+        "R2-PM1:V",
+        "R2-PA:ZH",
+        "R4-PM1:V",
+        "R4-PA2:VH",
+        "R2-PM3:V",
+        "R1-PA:ZH"
+      ]
+    },
+    {
+      "model": "Random Forest",
+      "fold_id": 2,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R4-PA:ZH",
+        "R1-PA:ZH",
+        "R2-PA:ZH",
+        "R3-PA:ZH",
+        "R2-PM1:V",
+        "R4-PM3:V",
+        "R2-PM7:V",
+        "R4-PM1:V"
+      ]
+    },
+    {
+      "model": "Random Forest",
+      "fold_id": 3,
+      "features": [
+        "R3-PM2:V",
+        "R4-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R2-PM5:I",
+        "R4-PM3:V",
+        "R4-PA:ZH",
+        "R1-PA:ZH",
+        "R2-PA:ZH",
+        "R1-PA3:VH",
+        "R4-PA3:VH",
+        "R1-PA2:VH",
+        "R3-PA:ZH"
+      ]
+    },
+    {
+      "model": "Random Forest",
+      "fold_id": 4,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R4-PA:ZH",
+        "R2-PA:ZH",
+        "R1-PA:ZH",
+        "R3-PA:ZH",
+        "R4-PM3:V",
+        "R2-PM1:V",
+        "R1-PA3:VH",
+        "R2-PA3:VH"
+      ]
+    },
+    {
+      "model": "Random Forest",
+      "fold_id": 5,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R4-PM7:V",
+        "R2-PA:ZH",
+        "R4-PA:ZH",
+        "R2-PM1:V",
+        "R3-PA:ZH",
+        "R1-PA:ZH",
+        "R4-PM3:V",
+        "R1-PA3:VH",
+        "R4-PA3:VH"
+      ]
+    },
+    {
+      "model": "Random Forest",
+      "fold_id": 6,
+      "features": [
+        "R3-PM2:V",
+        "R4-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R2-PM5:I",
+        "R3-PM5:I",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R1-PA:ZH",
+        "R2-PA:ZH",
+        "R4-PA:ZH",
+        "R4-PM3:V",
+        "R2-PM1:V",
+        "R3-PA:ZH",
+        "R4-PA3:VH",
+        "R4-PM1:V"
+      ]
+    },
+    {
+      "model": "Random Forest",
+      "fold_id": 7,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R3-PM5:I",
+        "R4-PM5:I",
+        "R4-PM7:V",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R1-PA:ZH",
+        "R2-PM1:V",
+        "R3-PA:ZH",
+        "R2-PA:ZH",
+        "R4-PA:ZH",
+        "R4-PM3:V",
+        "R4-PM1:V",
+        "R2-PA3:VH"
+      ]
+    },
+    {
+      "model": "Random Forest",
+      "fold_id": 8,
+      "features": [
+        "R3-PM2:V",
+        "R4-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R2-PM5:I",
+        "R3-PM5:I",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R1-PA:ZH",
+        "R2-PA:ZH",
+        "R3-PA:ZH",
+        "R4-PM3:V",
+        "R4-PA:ZH",
+        "R2-PM1:V",
+        "R4-PM1:V",
+        "R1-PA2:VH"
+      ]
+    },
+    {
+      "model": "Random Forest",
+      "fold_id": 9,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R4-PM5:I",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R3-PM5:I",
+        "R4-PA:ZH",
+        "R4-PM3:V",
+        "R2-PM1:V",
+        "R3-PA3:VH",
+        "R3-PA:ZH",
+        "R1-PA3:VH",
+        "R2-PA:ZH",
+        "R4-PM1:V"
+      ]
+    },
+    {
+      "model": "Random Forest",
+      "fold_id": 10,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R3-PM5:I",
+        "R4-PM5:I",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R4-PM1:V",
+        "R4-PA:ZH",
+        "R2-PA:ZH",
+        "R1-PA:ZH",
+        "R4-PM3:V",
+        "R3-PA:ZH",
+        "R2-PM1:V",
+        "R2-PA2:VH"
+      ]
+    },
+    {
+      "model": "Random Forest",
+      "fold_id": 11,
+      "features": [
+        "R4-PM2:V",
+        "R1-PM2:V",
+        "R3-PM2:V",
+        "R4-PM7:V",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R1-PA:ZH",
+        "R4-PA:ZH",
+        "R2-PA:ZH",
+        "R4-PM3:V",
+        "R2-PM1:V",
+        "R2-PM3:V",
+        "R3-PA:ZH",
+        "R4-PM1:V"
+      ]
+    },
+    {
+      "model": "Random Forest",
+      "fold_id": 12,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R4-PM5:I",
+        "R1-PM5:I",
+        "R2-PM5:I",
+        "R4-PA:ZH",
+        "R3-PM5:I",
+        "R3-PA:ZH",
+        "R1-PA:ZH",
+        "R2-PM1:V",
+        "R2-PA:ZH",
+        "R4-PM1:V",
+        "R4-PM3:V",
+        "R1-PA2:VH"
+      ]
+    },
+    {
+      "model": "Random Forest",
+      "fold_id": 13,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R3-PM5:I",
+        "R1-PM5:I",
+        "R2-PM5:I",
+        "R4-PM5:I",
+        "R3-PA:ZH",
+        "R1-PA:ZH",
+        "R4-PA:ZH",
+        "R2-PM7:V",
+        "R2-PM1:V",
+        "R2-PA:ZH",
+        "R4-PM1:V",
+        "R4-PM3:V"
+      ]
+    },
+    {
+      "model": "Random Forest",
+      "fold_id": 14,
+      "features": [
+        "R3-PM2:V",
+        "R4-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R4-PM5:I",
+        "R2-PM5:I",
+        "R3-PM5:I",
+        "R1-PM5:I",
+        "R2-PA:ZH",
+        "R3-PA:ZH",
+        "R4-PA:ZH",
+        "R1-PA:ZH",
+        "R2-PM1:V",
+        "R2-PM7:V",
+        "R4-PM1:V",
+        "R4-PM3:V"
+      ]
+    },
+    {
+      "model": "Random Forest",
+      "fold_id": 15,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R3-PM5:I",
+        "R2-PM5:I",
+        "R4-PM5:I",
+        "R1-PM5:I",
+        "R3-PA:ZH",
+        "R4-PA:ZH",
+        "R4-PM3:V",
+        "R2-PA:ZH",
+        "R1-PA:ZH",
+        "R2-PM1:V",
+        "R3-PA3:VH",
+        "R1-PA3:VH"
+      ]
+    },
+    {
+      "model": "XGBoost",
+      "fold_id": 1,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R2-PM5:I",
+        "R4-PM7:V",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R4-PA:ZH",
+        "R3-PA:ZH",
+        "R2-PM1:V",
+        "R2-PA:ZH",
+        "R4-PM1:V",
+        "R4-PA2:VH",
+        "R2-PM3:V",
+        "R1-PA:ZH"
+      ]
+    },
+    {
+      "model": "XGBoost",
+      "fold_id": 2,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R4-PA:ZH",
+        "R1-PA:ZH",
+        "R2-PA:ZH",
+        "R3-PA:ZH",
+        "R2-PM1:V",
+        "R4-PM3:V",
+        "R2-PM7:V",
+        "R4-PM1:V"
+      ]
+    },
+    {
+      "model": "XGBoost",
+      "fold_id": 3,
+      "features": [
+        "R3-PM2:V",
+        "R4-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R2-PM5:I",
+        "R4-PM3:V",
+        "R4-PA:ZH",
+        "R1-PA:ZH",
+        "R2-PA:ZH",
+        "R1-PA3:VH",
+        "R4-PA3:VH",
+        "R1-PA2:VH",
+        "R3-PA:ZH"
+      ]
+    },
+    {
+      "model": "XGBoost",
+      "fold_id": 4,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R4-PA:ZH",
+        "R2-PA:ZH",
+        "R1-PA:ZH",
+        "R3-PA:ZH",
+        "R4-PM3:V",
+        "R2-PM1:V",
+        "R1-PA3:VH",
+        "R2-PA3:VH"
+      ]
+    },
+    {
+      "model": "XGBoost",
+      "fold_id": 5,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R4-PM7:V",
+        "R2-PA:ZH",
+        "R4-PA:ZH",
+        "R2-PM1:V",
+        "R3-PA:ZH",
+        "R1-PA:ZH",
+        "R4-PM3:V",
+        "R1-PA3:VH",
+        "R4-PA3:VH"
+      ]
+    },
+    {
+      "model": "XGBoost",
+      "fold_id": 6,
+      "features": [
+        "R3-PM2:V",
+        "R4-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R2-PM5:I",
+        "R3-PM5:I",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R1-PA:ZH",
+        "R2-PA:ZH",
+        "R4-PA:ZH",
+        "R4-PM3:V",
+        "R2-PM1:V",
+        "R3-PA:ZH",
+        "R4-PA3:VH",
+        "R4-PM1:V"
+      ]
+    },
+    {
+      "model": "XGBoost",
+      "fold_id": 7,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R3-PM5:I",
+        "R4-PM5:I",
+        "R4-PM7:V",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R1-PA:ZH",
+        "R2-PM1:V",
+        "R3-PA:ZH",
+        "R2-PA:ZH",
+        "R4-PA:ZH",
+        "R4-PM3:V",
+        "R4-PM1:V",
+        "R2-PA3:VH"
+      ]
+    },
+    {
+      "model": "XGBoost",
+      "fold_id": 8,
+      "features": [
+        "R3-PM2:V",
+        "R4-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R2-PM5:I",
+        "R3-PM5:I",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R1-PA:ZH",
+        "R2-PA:ZH",
+        "R3-PA:ZH",
+        "R4-PM3:V",
+        "R4-PA:ZH",
+        "R2-PM1:V",
+        "R4-PM1:V",
+        "R1-PA2:VH"
+      ]
+    },
+    {
+      "model": "XGBoost",
+      "fold_id": 9,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R4-PM5:I",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R3-PM5:I",
+        "R4-PA:ZH",
+        "R4-PM3:V",
+        "R2-PM1:V",
+        "R3-PA3:VH",
+        "R3-PA:ZH",
+        "R1-PA3:VH",
+        "R2-PA:ZH",
+        "R4-PM1:V"
+      ]
+    },
+    {
+      "model": "XGBoost",
+      "fold_id": 10,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R3-PM5:I",
+        "R4-PM5:I",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R4-PM1:V",
+        "R4-PA:ZH",
+        "R2-PA:ZH",
+        "R1-PA:ZH",
+        "R4-PM3:V",
+        "R3-PA:ZH",
+        "R2-PM1:V",
+        "R2-PA2:VH"
+      ]
+    },
+    {
+      "model": "XGBoost",
+      "fold_id": 11,
+      "features": [
+        "R4-PM2:V",
+        "R1-PM2:V",
+        "R3-PM2:V",
+        "R4-PM7:V",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R1-PA:ZH",
+        "R4-PA:ZH",
+        "R2-PA:ZH",
+        "R4-PM3:V",
+        "R2-PM1:V",
+        "R2-PM3:V",
+        "R3-PA:ZH",
+        "R4-PM1:V"
+      ]
+    },
+    {
+      "model": "XGBoost",
+      "fold_id": 12,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R4-PM5:I",
+        "R1-PM5:I",
+        "R2-PM5:I",
+        "R4-PA:ZH",
+        "R3-PM5:I",
+        "R3-PA:ZH",
+        "R1-PA:ZH",
+        "R2-PM1:V",
+        "R2-PA:ZH",
+        "R4-PM1:V",
+        "R4-PM3:V",
+        "R1-PA2:VH"
+      ]
+    },
+    {
+      "model": "XGBoost",
+      "fold_id": 13,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R3-PM5:I",
+        "R1-PM5:I",
+        "R2-PM5:I",
+        "R4-PM5:I",
+        "R3-PA:ZH",
+        "R1-PA:ZH",
+        "R4-PA:ZH",
+        "R2-PM7:V",
+        "R2-PM1:V",
+        "R2-PA:ZH",
+        "R4-PM1:V",
+        "R4-PM3:V"
+      ]
+    },
+    {
+      "model": "XGBoost",
+      "fold_id": 14,
+      "features": [
+        "R3-PM2:V",
+        "R4-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R4-PM5:I",
+        "R2-PM5:I",
+        "R3-PM5:I",
+        "R1-PM5:I",
+        "R2-PA:ZH",
+        "R3-PA:ZH",
+        "R4-PA:ZH",
+        "R1-PA:ZH",
+        "R2-PM1:V",
+        "R2-PM7:V",
+        "R4-PM1:V",
+        "R4-PM3:V"
+      ]
+    },
+    {
+      "model": "XGBoost",
+      "fold_id": 15,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R3-PM5:I",
+        "R2-PM5:I",
+        "R4-PM5:I",
+        "R1-PM5:I",
+        "R3-PA:ZH",
+        "R4-PA:ZH",
+        "R4-PM3:V",
+        "R2-PA:ZH",
+        "R1-PA:ZH",
+        "R2-PM1:V",
+        "R3-PA3:VH",
+        "R1-PA3:VH"
+      ]
+    },
+    {
+      "model": "Compact MLP",
+      "fold_id": 1,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R2-PM5:I",
+        "R4-PM7:V",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R4-PA:ZH",
+        "R3-PA:ZH",
+        "R2-PM1:V",
+        "R2-PA:ZH",
+        "R4-PM1:V",
+        "R4-PA2:VH",
+        "R2-PM3:V",
+        "R1-PA:ZH"
+      ]
+    },
+    {
+      "model": "Compact MLP",
+      "fold_id": 2,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R4-PA:ZH",
+        "R1-PA:ZH",
+        "R2-PA:ZH",
+        "R3-PA:ZH",
+        "R2-PM1:V",
+        "R4-PM3:V",
+        "R2-PM7:V",
+        "R4-PM1:V"
+      ]
+    },
+    {
+      "model": "Compact MLP",
+      "fold_id": 3,
+      "features": [
+        "R3-PM2:V",
+        "R4-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R2-PM5:I",
+        "R4-PM3:V",
+        "R4-PA:ZH",
+        "R1-PA:ZH",
+        "R2-PA:ZH",
+        "R1-PA3:VH",
+        "R4-PA3:VH",
+        "R1-PA2:VH",
+        "R3-PA:ZH"
+      ]
+    },
+    {
+      "model": "Compact MLP",
+      "fold_id": 4,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R4-PA:ZH",
+        "R2-PA:ZH",
+        "R1-PA:ZH",
+        "R3-PA:ZH",
+        "R4-PM3:V",
+        "R2-PM1:V",
+        "R1-PA3:VH",
+        "R2-PA3:VH"
+      ]
+    },
+    {
+      "model": "Compact MLP",
+      "fold_id": 5,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R4-PM7:V",
+        "R2-PA:ZH",
+        "R4-PA:ZH",
+        "R2-PM1:V",
+        "R3-PA:ZH",
+        "R1-PA:ZH",
+        "R4-PM3:V",
+        "R1-PA3:VH",
+        "R4-PA3:VH"
+      ]
+    },
+    {
+      "model": "Compact MLP",
+      "fold_id": 6,
+      "features": [
+        "R3-PM2:V",
+        "R4-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R2-PM5:I",
+        "R3-PM5:I",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R1-PA:ZH",
+        "R2-PA:ZH",
+        "R4-PA:ZH",
+        "R4-PM3:V",
+        "R2-PM1:V",
+        "R3-PA:ZH",
+        "R4-PA3:VH",
+        "R4-PM1:V"
+      ]
+    },
+    {
+      "model": "Compact MLP",
+      "fold_id": 7,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R3-PM5:I",
+        "R4-PM5:I",
+        "R4-PM7:V",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R1-PA:ZH",
+        "R2-PM1:V",
+        "R3-PA:ZH",
+        "R2-PA:ZH",
+        "R4-PA:ZH",
+        "R4-PM3:V",
+        "R4-PM1:V",
+        "R2-PA3:VH"
+      ]
+    },
+    {
+      "model": "Compact MLP",
+      "fold_id": 8,
+      "features": [
+        "R3-PM2:V",
+        "R4-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R2-PM5:I",
+        "R3-PM5:I",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R1-PA:ZH",
+        "R2-PA:ZH",
+        "R3-PA:ZH",
+        "R4-PM3:V",
+        "R4-PA:ZH",
+        "R2-PM1:V",
+        "R4-PM1:V",
+        "R1-PA2:VH"
+      ]
+    },
+    {
+      "model": "Compact MLP",
+      "fold_id": 9,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R4-PM5:I",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R3-PM5:I",
+        "R4-PA:ZH",
+        "R4-PM3:V",
+        "R2-PM1:V",
+        "R3-PA3:VH",
+        "R3-PA:ZH",
+        "R1-PA3:VH",
+        "R2-PA:ZH",
+        "R4-PM1:V"
+      ]
+    },
+    {
+      "model": "Compact MLP",
+      "fold_id": 10,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R3-PM5:I",
+        "R4-PM5:I",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R4-PM1:V",
+        "R4-PA:ZH",
+        "R2-PA:ZH",
+        "R1-PA:ZH",
+        "R4-PM3:V",
+        "R3-PA:ZH",
+        "R2-PM1:V",
+        "R2-PA2:VH"
+      ]
+    },
+    {
+      "model": "Compact MLP",
+      "fold_id": 11,
+      "features": [
+        "R4-PM2:V",
+        "R1-PM2:V",
+        "R3-PM2:V",
+        "R4-PM7:V",
+        "R2-PM5:I",
+        "R1-PM5:I",
+        "R4-PM5:I",
+        "R3-PM5:I",
+        "R1-PA:ZH",
+        "R4-PA:ZH",
+        "R2-PA:ZH",
+        "R4-PM3:V",
+        "R2-PM1:V",
+        "R2-PM3:V",
+        "R3-PA:ZH",
+        "R4-PM1:V"
+      ]
+    },
+    {
+      "model": "Compact MLP",
+      "fold_id": 12,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R4-PM5:I",
+        "R1-PM5:I",
+        "R2-PM5:I",
+        "R4-PA:ZH",
+        "R3-PM5:I",
+        "R3-PA:ZH",
+        "R1-PA:ZH",
+        "R2-PM1:V",
+        "R2-PA:ZH",
+        "R4-PM1:V",
+        "R4-PM3:V",
+        "R1-PA2:VH"
+      ]
+    },
+    {
+      "model": "Compact MLP",
+      "fold_id": 13,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R3-PM5:I",
+        "R1-PM5:I",
+        "R2-PM5:I",
+        "R4-PM5:I",
+        "R3-PA:ZH",
+        "R1-PA:ZH",
+        "R4-PA:ZH",
+        "R2-PM7:V",
+        "R2-PM1:V",
+        "R2-PA:ZH",
+        "R4-PM1:V",
+        "R4-PM3:V"
+      ]
+    },
+    {
+      "model": "Compact MLP",
+      "fold_id": 14,
+      "features": [
+        "R3-PM2:V",
+        "R4-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R4-PM5:I",
+        "R2-PM5:I",
+        "R3-PM5:I",
+        "R1-PM5:I",
+        "R2-PA:ZH",
+        "R3-PA:ZH",
+        "R4-PA:ZH",
+        "R1-PA:ZH",
+        "R2-PM1:V",
+        "R2-PM7:V",
+        "R4-PM1:V",
+        "R4-PM3:V"
+      ]
+    },
+    {
+      "model": "Compact MLP",
+      "fold_id": 15,
+      "features": [
+        "R4-PM2:V",
+        "R3-PM2:V",
+        "R1-PM2:V",
+        "R4-PM7:V",
+        "R3-PM5:I",
+        "R2-PM5:I",
+        "R4-PM5:I",
+        "R1-PM5:I",
+        "R3-PA:ZH",
+        "R4-PA:ZH",
+        "R4-PM3:V",
+        "R2-PA:ZH",
+        "R1-PA:ZH",
+        "R2-PM1:V",
+        "R3-PA3:VH",
+        "R1-PA3:VH"
+      ]
+    }
+  ],
+  "feature_selection_frequency": {
+    "Logistic Regression": [
+      {
+        "feature": "R4-PM2:V",
+        "fold_count": 15
+      },
+      {
+        "feature": "R3-PM2:V",
+        "fold_count": 15
+      },
+      {
+        "feature": "R1-PM2:V",
+        "fold_count": 15
+      },
+      {
+        "feature": "R2-PM5:I",
+        "fold_count": 15
+      },
+      {
+        "feature": "R4-PM7:V",
+        "fold_count": 15
+      },
+      {
+        "feature": "R1-PM5:I",
+        "fold_count": 15
+      },
+      {
+        "feature": "R4-PM5:I",
+        "fold_count": 15
+      },
+      {
+        "feature": "R3-PM5:I",
+        "fold_count": 15
+      },
+      {
+        "feature": "R4-PA:ZH",
+        "fold_count": 15
+      },
+      {
+        "feature": "R3-PA:ZH",
+        "fold_count": 15
+      },
+      {
+        "feature": "R2-PA:ZH",
+        "fold_count": 15
+      },
+      {
+        "feature": "R2-PM1:V",
+        "fold_count": 14
+      },
+      {
+        "feature": "R1-PA:ZH",
+        "fold_count": 14
+      },
+      {
+        "feature": "R4-PM3:V",
+        "fold_count": 14
+      },
+      {
+        "feature": "R4-PM1:V",
+        "fold_count": 11
+      },
+      {
+        "feature": "R1-PA3:VH",
+        "fold_count": 5
+      },
+      {
+        "feature": "R2-PM7:V",
+        "fold_count": 3
+      },
+      {
+        "feature": "R4-PA3:VH",
+        "fold_count": 3
+      },
+      {
+        "feature": "R1-PA2:VH",
+        "fold_count": 3
+      },
+      {
+        "feature": "R2-PM3:V",
+        "fold_count": 2
+      },
+      {
+        "feature": "R2-PA3:VH",
+        "fold_count": 2
+      },
+      {
+        "feature": "R3-PA3:VH",
+        "fold_count": 2
+      },
+      {
+        "feature": "R4-PA2:VH",
+        "fold_count": 1
+      },
+      {
+        "feature": "R2-PA2:VH",
+        "fold_count": 1
+      }
+    ],
+    "Random Forest": [
+      {
+        "feature": "R4-PM2:V",
+        "fold_count": 15
+      },
+      {
+        "feature": "R3-PM2:V",
+        "fold_count": 15
+      },
+      {
+        "feature": "R1-PM2:V",
+        "fold_count": 15
+      },
+      {
+        "feature": "R2-PM5:I",
+        "fold_count": 15
+      },
+      {
+        "feature": "R4-PM7:V",
+        "fold_count": 15
+      },
+      {
+        "feature": "R1-PM5:I",
+        "fold_count": 15
+      },
+      {
+        "feature": "R4-PM5:I",
+        "fold_count": 15
+      },
+      {
+        "feature": "R3-PM5:I",
+        "fold_count": 15
+      },
+      {
+        "feature": "R4-PA:ZH",
+        "fold_count": 15
+      },
+      {
+        "feature": "R3-PA:ZH",
+        "fold_count": 15
+      },
+      {
+        "feature": "R2-PA:ZH",
+        "fold_count": 15
+      },
+      {
+        "feature": "R2-PM1:V",
+        "fold_count": 14
+      },
+      {
+        "feature": "R1-PA:ZH",
+        "fold_count": 14
+      },
+      {
+        "feature": "R4-PM3:V",
+        "fold_count": 14
+      },
+      {
+        "feature": "R4-PM1:V",
+        "fold_count": 11
+      },
+      {
+        "feature": "R1-PA3:VH",
+        "fold_count": 5
+      },
+      {
+        "feature": "R2-PM7:V",
+        "fold_count": 3
+      },
+      {
+        "feature": "R4-PA3:VH",
+        "fold_count": 3
+      },
+      {
+        "feature": "R1-PA2:VH",
+        "fold_count": 3
+      },
+      {
+        "feature": "R2-PM3:V",
+        "fold_count": 2
+      },
+      {
+        "feature": "R2-PA3:VH",
+        "fold_count": 2
+      },
+      {
+        "feature": "R3-PA3:VH",
+        "fold_count": 2
+      },
+      {
+        "feature": "R4-PA2:VH",
+        "fold_count": 1
+      },
+      {
+        "feature": "R2-PA2:VH",
+        "fold_count": 1
+      }
+    ],
+    "XGBoost": [
+      {
+        "feature": "R4-PM2:V",
+        "fold_count": 15
+      },
+      {
+        "feature": "R3-PM2:V",
+        "fold_count": 15
+      },
+      {
+        "feature": "R1-PM2:V",
+        "fold_count": 15
+      },
+      {
+        "feature": "R2-PM5:I",
+        "fold_count": 15
+      },
+      {
+        "feature": "R4-PM7:V",
+        "fold_count": 15
+      },
+      {
+        "feature": "R1-PM5:I",
+        "fold_count": 15
+      },
+      {
+        "feature": "R4-PM5:I",
+        "fold_count": 15
+      },
+      {
+        "feature": "R3-PM5:I",
+        "fold_count": 15
+      },
+      {
+        "feature": "R4-PA:ZH",
+        "fold_count": 15
+      },
+      {
+        "feature": "R3-PA:ZH",
+        "fold_count": 15
+      },
+      {
+        "feature": "R2-PA:ZH",
+        "fold_count": 15
+      },
+      {
+        "feature": "R2-PM1:V",
+        "fold_count": 14
+      },
+      {
+        "feature": "R1-PA:ZH",
+        "fold_count": 14
+      },
+      {
+        "feature": "R4-PM3:V",
+        "fold_count": 14
+      },
+      {
+        "feature": "R4-PM1:V",
+        "fold_count": 11
+      },
+      {
+        "feature": "R1-PA3:VH",
+        "fold_count": 5
+      },
+      {
+        "feature": "R2-PM7:V",
+        "fold_count": 3
+      },
+      {
+        "feature": "R4-PA3:VH",
+        "fold_count": 3
+      },
+      {
+        "feature": "R1-PA2:VH",
+        "fold_count": 3
+      },
+      {
+        "feature": "R2-PM3:V",
+        "fold_count": 2
+      },
+      {
+        "feature": "R2-PA3:VH",
+        "fold_count": 2
+      },
+      {
+        "feature": "R3-PA3:VH",
+        "fold_count": 2
+      },
+      {
+        "feature": "R4-PA2:VH",
+        "fold_count": 1
+      },
+      {
+        "feature": "R2-PA2:VH",
+        "fold_count": 1
+      }
+    ],
+    "Compact MLP": [
+      {
+        "feature": "R4-PM2:V",
+        "fold_count": 15
+      },
+      {
+        "feature": "R3-PM2:V",
+        "fold_count": 15
+      },
+      {
+        "feature": "R1-PM2:V",
+        "fold_count": 15
+      },
+      {
+        "feature": "R2-PM5:I",
+        "fold_count": 15
+      },
+      {
+        "feature": "R4-PM7:V",
+        "fold_count": 15
+      },
+      {
+        "feature": "R1-PM5:I",
+        "fold_count": 15
+      },
+      {
+        "feature": "R4-PM5:I",
+        "fold_count": 15
+      },
+      {
+        "feature": "R3-PM5:I",
+        "fold_count": 15
+      },
+      {
+        "feature": "R4-PA:ZH",
+        "fold_count": 15
+      },
+      {
+        "feature": "R3-PA:ZH",
+        "fold_count": 15
+      },
+      {
+        "feature": "R2-PA:ZH",
+        "fold_count": 15
+      },
+      {
+        "feature": "R2-PM1:V",
+        "fold_count": 14
+      },
+      {
+        "feature": "R1-PA:ZH",
+        "fold_count": 14
+      },
+      {
+        "feature": "R4-PM3:V",
+        "fold_count": 14
+      },
+      {
+        "feature": "R4-PM1:V",
+        "fold_count": 11
+      },
+      {
+        "feature": "R1-PA3:VH",
+        "fold_count": 5
+      },
+      {
+        "feature": "R2-PM7:V",
+        "fold_count": 3
+      },
+      {
+        "feature": "R4-PA3:VH",
+        "fold_count": 3
+      },
+      {
+        "feature": "R1-PA2:VH",
+        "fold_count": 3
+      },
+      {
+        "feature": "R2-PM3:V",
+        "fold_count": 2
+      },
+      {
+        "feature": "R2-PA3:VH",
+        "fold_count": 2
+      },
+      {
+        "feature": "R3-PA3:VH",
+        "fold_count": 2
+      },
+      {
+        "feature": "R4-PA2:VH",
+        "fold_count": 1
+      },
+      {
+        "feature": "R2-PA2:VH",
+        "fold_count": 1
+      }
+    ]
+  },
+  "feature_groups": {
+    "cyber_log": [
+      "control_panel_log1",
+      "control_panel_log2",
+      "control_panel_log3",
+      "control_panel_log4",
+      "relay1_log",
+      "relay2_log",
+      "relay3_log",
+      "relay4_log",
+      "snort_log1",
+      "snort_log2",
+      "snort_log3",
+      "snort_log4"
+    ],
+    "pmu": [
+      "R1-PA1:VH",
+      "R1-PM1:V",
+      "R1-PA2:VH",
+      "R1-PM2:V",
+      "R1-PA3:VH",
+      "R1-PM3:V",
+      "R1-PA4:IH",
+      "R1-PM4:I",
+      "R1-PA5:IH",
+      "R1-PM5:I",
+      "R1-PA6:IH",
+      "R1-PM6:I",
+      "R1-PA7:VH",
+      "R1-PM7:V",
+      "R1-PA8:VH",
+      "R1-PM8:V",
+      "R1-PA9:VH",
+      "R1-PM9:V",
+      "R1-PA10:IH",
+      "R1-PM10:I",
+      "R1-PA11:IH",
+      "R1-PM11:I",
+      "R1-PA12:IH",
+      "R1-PM12:I",
+      "R1:F",
+      "R1:DF",
+      "R1-PA:Z",
+      "R1-PA:ZH",
+      "R1:S",
+      "R2-PA1:VH",
+      "R2-PM1:V",
+      "R2-PA2:VH",
+      "R2-PM2:V",
+      "R2-PA3:VH",
+      "R2-PM3:V",
+      "R2-PA4:IH",
+      "R2-PM4:I",
+      "R2-PA5:IH",
+      "R2-PM5:I",
+      "R2-PA6:IH",
+      "R2-PM6:I",
+      "R2-PA7:VH",
+      "R2-PM7:V",
+      "R2-PA8:VH",
+      "R2-PM8:V",
+      "R2-PA9:VH",
+      "R2-PM9:V",
+      "R2-PA10:IH",
+      "R2-PM10:I",
+      "R2-PA11:IH",
+      "R2-PM11:I",
+      "R2-PA12:IH",
+      "R2-PM12:I",
+      "R2:F",
+      "R2:DF",
+      "R2-PA:Z",
+      "R2-PA:ZH",
+      "R2:S",
+      "R3-PA1:VH",
+      "R3-PM1:V",
+      "R3-PA2:VH",
+      "R3-PM2:V",
+      "R3-PA3:VH",
+      "R3-PM3:V",
+      "R3-PA4:IH",
+      "R3-PM4:I",
+      "R3-PA5:IH",
+      "R3-PM5:I",
+      "R3-PA6:IH",
+      "R3-PM6:I",
+      "R3-PA7:VH",
+      "R3-PM7:V",
+      "R3-PA8:VH",
+      "R3-PM8:V",
+      "R3-PA9:VH",
+      "R3-PM9:V",
+      "R3-PA10:IH",
+      "R3-PM10:I",
+      "R3-PA11:IH",
+      "R3-PM11:I",
+      "R3-PA12:IH",
+      "R3-PM12:I",
+      "R3:F",
+      "R3:DF",
+      "R3-PA:Z",
+      "R3-PA:ZH",
+      "R3:S",
+      "R4-PA1:VH",
+      "R4-PM1:V",
+      "R4-PA2:VH",
+      "R4-PM2:V",
+      "R4-PA3:VH",
+      "R4-PM3:V",
+      "R4-PA4:IH",
+      "R4-PM4:I",
+      "R4-PA5:IH",
+      "R4-PM5:I",
+      "R4-PA6:IH",
+      "R4-PM6:I",
+      "R4-PA7:VH",
+      "R4-PM7:V",
+      "R4-PA8:VH",
+      "R4-PM8:V",
+      "R4-PA9:VH",
+      "R4-PM9:V",
+      "R4-PA10:IH",
+      "R4-PM10:I",
+      "R4-PA11:IH",
+      "R4-PM11:I",
+      "R4-PA12:IH",
+      "R4-PM12:I",
+      "R4:F",
+      "R4:DF",
+      "R4-PA:Z",
+      "R4-PA:ZH",
+      "R4:S"
+    ],
+    "R1": [
+      "R1-PA1:VH",
+      "R1-PM1:V",
+      "R1-PA2:VH",
+      "R1-PM2:V",
+      "R1-PA3:VH",
+      "R1-PM3:V",
+      "R1-PA4:IH",
+      "R1-PM4:I",
+      "R1-PA5:IH",
+      "R1-PM5:I",
+      "R1-PA6:IH",
+      "R1-PM6:I",
+      "R1-PA7:VH",
+      "R1-PM7:V",
+      "R1-PA8:VH",
+      "R1-PM8:V",
+      "R1-PA9:VH",
+      "R1-PM9:V",
+      "R1-PA10:IH",
+      "R1-PM10:I",
+      "R1-PA11:IH",
+      "R1-PM11:I",
+      "R1-PA12:IH",
+      "R1-PM12:I",
+      "R1:F",
+      "R1:DF",
+      "R1-PA:Z",
+      "R1-PA:ZH",
+      "R1:S"
+    ],
+    "R2": [
+      "R2-PA1:VH",
+      "R2-PM1:V",
+      "R2-PA2:VH",
+      "R2-PM2:V",
+      "R2-PA3:VH",
+      "R2-PM3:V",
+      "R2-PA4:IH",
+      "R2-PM4:I",
+      "R2-PA5:IH",
+      "R2-PM5:I",
+      "R2-PA6:IH",
+      "R2-PM6:I",
+      "R2-PA7:VH",
+      "R2-PM7:V",
+      "R2-PA8:VH",
+      "R2-PM8:V",
+      "R2-PA9:VH",
+      "R2-PM9:V",
+      "R2-PA10:IH",
+      "R2-PM10:I",
+      "R2-PA11:IH",
+      "R2-PM11:I",
+      "R2-PA12:IH",
+      "R2-PM12:I",
+      "R2:F",
+      "R2:DF",
+      "R2-PA:Z",
+      "R2-PA:ZH",
+      "R2:S"
+    ],
+    "R3": [
+      "R3-PA1:VH",
+      "R3-PM1:V",
+      "R3-PA2:VH",
+      "R3-PM2:V",
+      "R3-PA3:VH",
+      "R3-PM3:V",
+      "R3-PA4:IH",
+      "R3-PM4:I",
+      "R3-PA5:IH",
+      "R3-PM5:I",
+      "R3-PA6:IH",
+      "R3-PM6:I",
+      "R3-PA7:VH",
+      "R3-PM7:V",
+      "R3-PA8:VH",
+      "R3-PM8:V",
+      "R3-PA9:VH",
+      "R3-PM9:V",
+      "R3-PA10:IH",
+      "R3-PM10:I",
+      "R3-PA11:IH",
+      "R3-PM11:I",
+      "R3-PA12:IH",
+      "R3-PM12:I",
+      "R3:F",
+      "R3:DF",
+      "R3-PA:Z",
+      "R3-PA:ZH",
+      "R3:S"
+    ],
+    "R4": [
+      "R4-PA1:VH",
+      "R4-PM1:V",
+      "R4-PA2:VH",
+      "R4-PM2:V",
+      "R4-PA3:VH",
+      "R4-PM3:V",
+      "R4-PA4:IH",
+      "R4-PM4:I",
+      "R4-PA5:IH",
+      "R4-PM5:I",
+      "R4-PA6:IH",
+      "R4-PM6:I",
+      "R4-PA7:VH",
+      "R4-PM7:V",
+      "R4-PA8:VH",
+      "R4-PM8:V",
+      "R4-PA9:VH",
+      "R4-PM9:V",
+      "R4-PA10:IH",
+      "R4-PM10:I",
+      "R4-PA11:IH",
+      "R4-PM11:I",
+      "R4-PA12:IH",
+      "R4-PM12:I",
+      "R4:F",
+      "R4:DF",
+      "R4-PA:Z",
+      "R4-PA:ZH",
+      "R4:S"
+    ]
+  },
+  "worst_relay": [
+    {
+      "model": "Logistic Regression",
+      "lowest_average_relay": "R3",
+      "lowest_average_auc": 0.5065214985587257,
+      "per_fold_worst_relay_counts": {
+        "R3": 11,
+        "R2": 2,
+        "R4": 2
+      },
+      "per_fold_worst_mean_auc": 0.49925560001435526
+    },
+    {
+      "model": "Random Forest",
+      "lowest_average_relay": "R4",
+      "lowest_average_auc": 0.5803071118423284,
+      "per_fold_worst_relay_counts": {
+        "R4": 15
+      },
+      "per_fold_worst_mean_auc": 0.5803071118423284
+    },
+    {
+      "model": "XGBoost",
+      "lowest_average_relay": "R4",
+      "lowest_average_auc": 0.6259615829688083,
+      "per_fold_worst_relay_counts": {
+        "R4": 10,
+        "R3": 5
+      },
+      "per_fold_worst_mean_auc": 0.611709034034891
+    },
+    {
+      "model": "Compact MLP",
+      "lowest_average_relay": "R4",
+      "lowest_average_auc": 0.5713743968975115,
+      "per_fold_worst_relay_counts": {
+        "R4": 11,
+        "R2": 3,
+        "R1": 1
+      },
+      "per_fold_worst_mean_auc": 0.5643881051281364
+    }
+  ],
+  "figure_audit": [
+    {
+      "file": "/Users/digdarshansubedi/Documents/Paper Publications/Saudi Arabia Sustainable Energy - Cuber Security Paper/RTS_Paper/figures/fig01_system_architecture.png",
+      "width_px": 947,
+      "height_px": 753,
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "single_column_legibility": "likely OK"
+    },
+    {
+      "file": "/Users/digdarshansubedi/Documents/Paper Publications/Saudi Arabia Sustainable Energy - Cuber Security Paper/RTS_Paper/figures/fig02_random_vs_runaware.png",
+      "width_px": 1065,
+      "height_px": 795,
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "single_column_legibility": "likely OK"
+    },
+    {
+      "file": "/Users/digdarshansubedi/Documents/Paper Publications/Saudi Arabia Sustainable Energy - Cuber Security Paper/RTS_Paper/figures/fig03_latency_envelopes.png",
+      "width_px": 1145,
+      "height_px": 720,
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "single_column_legibility": "likely OK"
+    },
+    {
+      "file": "/Users/digdarshansubedi/Documents/Paper Publications/Saudi Arabia Sustainable Energy - Cuber Security Paper/RTS_Paper/figures/fig04_payload_latency_quality.png",
+      "width_px": 2254,
+      "height_px": 1317,
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "single_column_legibility": "dense at one-column; consider figure* or simplified labels if reviewer readability is a concern"
+    },
+    {
+      "file": "/Users/digdarshansubedi/Documents/Paper Publications/Saudi Arabia Sustainable Energy - Cuber Security Paper/RTS_Paper/figures/fig05_missing_telemetry_robustness.png",
+      "width_px": 1680,
+      "height_px": 1140,
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "single_column_legibility": "likely OK"
+    },
+    {
+      "file": "/Users/digdarshansubedi/Documents/Paper Publications/Saudi Arabia Sustainable Energy - Cuber Security Paper/RTS_Paper/figures/fig06_edge_vs_central.png",
+      "width_px": 2160,
+      "height_px": 1200,
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "single_column_legibility": "dense at one-column; consider figure* or simplified labels if reviewer readability is a concern"
+    }
+  ],
+  "number_validation_counts": {
+    "match": 116
+  },
+  "environment_saved_latency": {
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "processor": "arm",
+    "python_version": "3.9.6",
+    "cpu_count_logical": 10,
+    "cpu_count_physical": 10,
+    "total_memory_gb": 32.0,
+    "sklearn_version": "1.6.1",
+    "xgboost_version": "2.1.4",
+    "warmup_iterations": 500,
+    "timed_iterations": 5000,
+    "batch_size": 1
+  },
+  "environment_inventory_capture": {
+    "numpy": "2.0.2",
+    "pandas": "2.2.3",
+    "sklearn": "1.6.1",
+    "xgboost": "2.1.4",
+    "shap": "0.49.1",
+    "torch": "2.8.0",
+    "matplotlib": "3.9.4",
+    "seaborn": "0.13.2",
+    "scipy": "1.13.1"
+  },
+  "dataset_sources": {
+    "official_page_title": "Industrial Control System (ICS) Cyber Attack Datasets",
+    "official_url": "https://sites.google.com/a/uah.edu/tommy-morris-uah/ics-data-sets",
+    "hosting": "Tommy Morris UAH Google Sites page; DASI/MSU archived Cyber Analytics and Datasets page also documents project context",
+    "creators_from_page": "Uttam Adhikari, Shengyi Pan, Tommy Morris, in collaboration with Raymond Borges and Justin Beaver of ORNL",
+    "access_date": "2026-07-13"
+  }
+}

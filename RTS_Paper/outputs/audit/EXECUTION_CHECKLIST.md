@@ -10,6 +10,13 @@ Updated after every meaningful step. This file is the single source of truth for
 - [x] Softened "five detectors" language in 4 places (abstract, introduction ×2, contributions list, Models subsection) to explicitly say four detectors were newly evaluated and the CNN is reported from prior work only. Recompiled clean (8 pages now, was 7), prohibited-claim grep still shows only the same 8 pre-verified disclaimers, no new violations.
 - [ ] Still open, unchanged from before: 4 bibliography slots, IEC 61850-5 / IEC TR 61850-90-4 / IEEE C37.118 citation verification against the actual standards — both explicitly deferred to the user's own judgment per their instruction, not attempted by the agent.
 
+## Figure filename update (2026-07-13, later same day)
+- [x] Renamed to match the submission-ready 6-figure plan: `fig04_payload_latency_quality` → `fig04_payload_latency_quality`, `fig05_missing_telemetry_robustness` → `fig05_missing_telemetry_robustness`, `fig06_edge_vs_central` → `fig06_edge_vs_central`. Content of each verified unchanged (visually re-inspected) before renaming.
+- [x] `fig_relay_loss.png` and `fig_threshold_tradeoffs.png` kept under their existing names as optional supporting figures — `fig06_edge_vs_central` already includes the "one relay lost (worst)" placement condition, so `fig_relay_loss` was correctly NOT promoted to Fig. 6 per the conditional in the request.
+- [x] `build_figures.py` edited to write the new filenames directly (not a post-hoc file copy); rerun from scratch to confirm reproducibility.
+- [x] `.tex` `\includegraphics` calls updated for Fig. 4 and Fig. 5. **Fig. 6 (`fig06_edge_vs_central.png`) was never actually embedded as a figure in the draft — the "Edge Versus Central Placement" subsection only contains Table VII, no `\includegraphics`.** This predates the rename; flagging as a gap for the user to decide whether to add the figure, keep the table-only presentation, or both.
+- [ ] `fig01_system_architecture`, `fig02_random_vs_runaware`, `fig03_latency_envelopes` — these are now generated directly by `build_figures.py`.
+
 ## Phase A — Continuity audit
 - [x] Repository inventory, baseline verification (exact match to plan) — `RTS_Paper/outputs/audit/`
 - [x] Feature-source map built, edge-visible definition CONFIRMED (R1's 29 features; no cyber/log leakage) — `feature_source_map.csv`
@@ -47,7 +54,7 @@ Updated after every meaningful step. This file is the single source of truth for
 
 ## Phase F (P1/output generation)
 - [x] `run_stats.py` run — Wilcoxon signed-rank + Holm correction over the 15 fold pairs, `wilcoxon_model_comparisons.csv`. **Finding: XGBoost beats RF on ROC-AUC in every one of 15 folds (p_holm=0.0004, effect_size=-1.0).**
-- [x] Figures generated: `fig_tradespace.{pdf,png}` (headline), `fig_missingness`, `fig_relay_loss`, `fig_threshold_tradeoffs`, `fig_placement_comparison` — all in `RTS_Paper/figures/`, palette matches the original paper's recolored figures (gray/blue/red/green/gold)
+- [x] Figures generated: `fig04_payload_latency_quality.{pdf,png}` (headline), `fig05_missing_telemetry_robustness`, `fig_relay_loss`, `fig_threshold_tradeoffs`, `fig06_edge_vs_central` — all in `RTS_Paper/figures/`, palette matches the original paper's recolored figures (gray/blue/red/green/gold)
 - [x] `results_macros.tex` generated (32 macros, all traced to CSVs) — `RTS_Paper/paper/results_macros.tex`
 - [x] `check_prohibited_claims.py` — 8 matches, all manually verified as proper "we do NOT claim X" disclaimers already present in the draft; zero actual violations
 - [x] **Correction:** earlier checklist entry wrongly claimed PMU-only/cyber-log-only were done — only edge_r1 had actually been run. Caught while filling the feature-budget table; ran both (`feature_budget_ranked_macro.csv`, `phase_b_loro_clean_macro_pmu_only.csv`, `_cyber_log_only.csv`). PMU-only matches full-128 performance almost exactly (confirms cyber/log contributes little); cyber/log-only collapses to near-chance AUC (0.538) despite deceptively high F1 (0.828, class-prior artifact).
@@ -55,7 +62,7 @@ Updated after every meaningful step. This file is the single source of truth for
 - [x] Per-budget latency measured (`latency_by_budget.csv`) — needed for the feature-budget table's P95 column, wasn't covered by the original Phase C latency pass.
 - [x] **All 43 `\resulttodo{}` placeholders resolved except the 4 explicitly human-authored bibliography slots** (lines 506/509/512/515, marked `AUTHORS: add...` — correctly left alone, not agent-fillable).
 - [x] Fixed a `pcrr7t` font-cache compile error (same fix the original paper's `write_paper()` already used: `\renewcommand{\ttdefault}{cmtt}`) and added `\graphicspath{{../figures/}}` so figures reference the canonical `RTS_Paper/figures/` location without duplicated copies.
-- [x] `\figuretodo` placeholders for fig_tradespace and fig_missingness replaced with real `\includegraphics`.
+- [x] `\figuretodo` placeholders for fig04_payload_latency_quality and fig05_missing_telemetry_robustness replaced with real `\includegraphics`.
 - [x] **Final compile check: PASSED.** 7 pages (within the 4-8 page target), two-pass pdflatex clean, only expected warnings (undefined citations for the 4 human bibliography slots, cosmetic under/overfull hbox). Visually inspected rendered pages — tables and figures lay out correctly, no overlap.
 - [x] Final prohibited-claim grep: same 8 matches as Phase A, all previously verified as proper disclaimers; none of the ~15 newly-written result sentences introduced any new violations.
 - [ ] Bibliography: 4 human-authored citation slots — NOT agent-fillable, remains a human task before submission.
